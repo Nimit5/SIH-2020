@@ -1,0 +1,69 @@
+section{
+   color: brown;
+}
+section img{
+    float: left;
+    border: 1px solid black;
+    border-radius: 5%;
+    width:120px;
+    height:120px;
+    margin-right:15px;
+}
+
+.container input[type=text]{
+    width: "100%";
+    background-color: antiquewhite;
+    border: 3px solid dodgerblue;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin: 8px 0px;
+}
+
+.container #list , select option, button{
+    width: "100%";
+    background-color: antiquewhite;
+    border: 3px solid dodgerblue;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin: 8px 0px;
+}
+
+.container input[type=text]:hover{
+    background-color: bisque;
+    border: 3px solid darkslateblue;
+}
+
+textarea{
+    width: "100%";
+    background-color: antiquewhite;
+    border: 3px solid dodgerblue;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin: 8px 0px;
+}
+
+textarea:hover{
+    background-color: bisque;
+    border: 3px solid darkslateblue;
+}
+
+input[type=submit]{
+    
+    border: 3px solid dodgerblue;
+    
+    border-radius: 8px;
+    width: 15%;
+    background-color: dodgerblue;
+    color: white;
+    margin-left: 40%;
+}
+
+input[type=submit]:hover{
+    background-color:darkslateblue ;
+    border: 3px solid darkslateblue;
+    cursor: pointer;
+}
+
+.divider{
+    border-right: 1px solid gray;
+}

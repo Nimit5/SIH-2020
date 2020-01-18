@@ -1,0 +1,252 @@
+/* Start Contact me Section */
+
+.contact-area{
+    padding:0;
+    background-attachment: fixed;
+}
+
+.divider{
+    border-right: 1px solid gray;
+}
+
+.contact-area h2{
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.contact-area h3{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: white;
+    font-weight: 500;
+}
+
+.contact-area h4{
+    color: white;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+    letter-spacing: 0.025px;
+    
+}
+
+
+.contact-area span{
+    display: block;
+    color: white;
+    font-size: 12px;
+    line-height: normal;
+    letter-spacing: 0.025px;
+}
+
+.contact-area ul li{
+    overflow: hidden;
+    margin-bottom: 25px;
+    
+}
+
+.contact-area ul li:last-child{
+    margin-bottom: 0;
+}
+
+.contact-area ul li .fa{
+    float: left;
+    width: 25px;
+    color: mediumvioletred;
+    font-size: 30px;
+}
+
+.contact-area ul li .address-phone{
+    float: left;
+    width: 180px;
+    padding-left: 25px;
+    margin-top: -10px;
+}
+
+.contact-block{
+    padding-left: 25px;
+}
+
+.contact-area .form-control, .contact-area .textarea{
+    font-family: 'cursive', sans-serif;
+    background-color: azure;
+    border: 1.8px solid orange;
+    padding: 13px 15px;
+    color: black;
+    margin-bottom: 30px;
+    height: 45px;
+    font-weight: 400;
+    border-radius: 0;
+}
+
+.contact-area .form-group{
+    margin-bottom: 24px;
+}
+
+.contact-area textarea{
+    min-height: 115px;
+}
+
+.contact-area .default-btn{
+    padding: 10px;
+}
+
+/*--------------------------- upto the contact-area ----------------------------*/
+
+
+
+.title h2{
+    color: darkorange; 
+    font-size: xx-large;   
+}
+
+ .title .sub-heading p{
+    color: black;
+}
+
+
+.sub-heading{
+    position: relative;
+   
+}
+
+.sub-heading:before{
+
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -3%;
+    width: 6%;
+    height: 3px;
+    background-color: darkorange;
+    z-index: 1;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.sub-heading:hover:before{
+    width: 24%;
+    margin-left: -12%;
+}
+
+.sub-heading:after{
+    
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -12%;
+    width: 24%;
+    height: 3px;
+    background-color: cadetblue;
+}
+
+.sub-heading p{
+    color: white;
+    display: inline-block;
+    padding: 0px 0px 20px;
+    position: relative;
+    line-height: 24px;
+    letter-spacing: 0.025em;
+}
+
+
+
+/* footer Css*/
+
+footer
+{
+    background-color: orange;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -mox-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    padding-top:10px;
+    padding-bottom:0px;
+    margin-top: 200px;
+
+}
+
+.social-icon a
+{
+    margin: 0 16px 20px 16px;
+    display: inline-block;
+}
+
+.social-icon .fa
+{
+   
+    
+    font-size: 30px;
+    color: deepskyblue;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    line-height: 2;
+    border-radius:50%;
+    transition: .3s;
+    border: 8px solid  #b1c9d1;
+    text-align: center;
+ 
+    
+}
+
+
+.social-icon a:hover .fa#fb
+{
+    color: white;
+    background-color: royalblue;
+    border:8px solid white;
+}
+.social-icon a:hover .fa#insta
+{
+    color: white;
+    background-color: deeppink;
+    border:8px solid white;
+}
+
+.social-icon a:hover .fa#t
+{
+    color: white;
+    background-color: deepskyblue;
+    border:8px solid white;
+}
+
+.social-icon a:hover .fa#wifi
+{
+    color: white;
+    background-color: lightseagreen;
+    border:8px solid white;
+}
+
+.social-icon a:hover .fa#yt
+{
+    color: white;
+    background-color: red;
+    border:8px solid white;
+}
+
+
+.bordernow
+{
+    width: 80px;
+    border-bottom: 2px solid white;
+    margin: 0 auto;
+    margin-top:20px;
+}
+
+
+#footer .last{
+    color: white;
+    font-weight: 500;
+}
+
+
+

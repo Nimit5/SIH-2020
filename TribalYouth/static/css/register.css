@@ -1,0 +1,209 @@
+/* popup login paeg set up */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+   
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/*  pop up login work over*/
+
+/* login/signup  css*/
+
+.myModal div h3{
+    color: red ;
+    text-shadow: 1px 1px 3px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+input[type=submit]{
+    border-radius: 15px;
+    background-color: darkorange;
+    width: 30%;
+    line-height: 200%;
+    margin-left:4%;
+    
+}
+input[type=submit]:hover{
+    color: black;
+    background-color: darkorange;
+    box-shadow: 1px 1px 3px;
+    font-weight: bold;
+}
+input[type=text] , input[type=password]{
+    background-color: whitesmoke;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5%;
+    border:solid 2px dodgerblue ;
+    width: 60%; 
+}
+
+#myModal{
+    
+    width:35%;
+    font-weight: bold;
+    border:solid 2px black;
+    border-radius: 15px;
+    text-align:center;
+    background-color: whitesmoke;
+    height: fit-content;
+    margin-left:30%;
+    margin-top:8%;
+}
+
+.modal-content{
+   width:35%;
+}
+
+span{
+  margin:2%;
+}
+
+fieldset{
+    margin-left:10%;
+    width:100%;
+    font-family: cursive;
+    font-size:100%;
+    font-weight:bold;
+    text-align: center;
+}
+
+legend h3{
+    color: red;
+    text-shadow: 1px 1px  2px;
+}
+/* login/signup css end*/
+
+
+/* tabs css*/
+/* Style the tab */
+.tab1 {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  
+}
+
+div#myModal .tablinks{
+  color: black;
+  background-color: white;
+}
+
+div#myModal #loginBtn:focus{
+  color: black;
+  background-color: darkorange;
+}
+
+div#myModal #signUpBtn:focus{
+  color: black;
+  background-color: darkorange;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab1 button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab1 button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab1 button:active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+div#myModal div#signup{
+  display: none;
+}
+
+/* tab under tabs */
+
+table{
+  border:none;
+  text-align: center;
+  margin-left: 5%;
+  width:90%;
+}
+
+
+table tr td{
+  padding-right:5%;
+  text-align:center;
+  width:50%;
+}
+
+table tr td img{
+border-radius:50%;
+border:solid 2px darkorange;
+}
+
+table tr td img:hover{
+  border-radius:50%;
+  border:solid 2px darkorange;
+  box-shadow: 2px 2px 4px 3px;
+  }
+
+table tr td img:active{
+    border-radius:50%;
+    border:solid 5px dodgerblue;
+    box-shadow: 2px 2px 4px 3px;
+    transform: scale(1.1);
+    }
+
+div#myModal div#signup div#proffsignup{
+  display: none;
+}
+
+/*tabs css end*/
+

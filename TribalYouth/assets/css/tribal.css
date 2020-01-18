@@ -1,0 +1,252 @@
+body{
+    height: 900px;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+nav#navb{
+    width: 100%;
+}
+
+.skill_popup{
+    display: none;
+    border:solid 1px black;
+    width:50%;
+    margin-left:25%;
+    /*height:fit-content;*/
+    height:650px;
+    border-radius: 15px;
+    background-color: beige;
+}
+
+#organisation{
+   max-height: fit-content;
+   max-width: 100%;
+
+}
+
+span{
+    margin:0.9%;
+}
+
+#skills,#orgs,#invite{
+    background-color: transparent;
+    border: none;
+    color: gray;
+}
+
+#skills:hover  , #orgs:hover ,#invite:hover{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+div.bgimg{
+    background-size: 100% 100%;    
+}
+
+input[type="file"]{
+    font-weight: bold;
+    font-family: cursive;
+    text-align: center;
+    margin-left: 30%;
+}
+div#addupload{
+    text-align: center;
+    font-weight: bold;
+    font-size:100%; 
+}
+
+div.bgimg{
+    width: 100%;
+    height: 550px;
+    
+}
+
+div#organisation{
+    margin-top: 100px;
+     padding: 5%;
+}
+
+div#organisation .btn{
+   float: right;
+   margin-right:4% ;
+  
+}
+
+div#organisation legend{
+    font-weight: bold;font-size: large;color: red;
+    text-shadow: 1px 1px 2px;
+}
+div#organisation img{
+ float: left;
+ border: 1px solid black;
+ border-radius: 5%;
+ width:170px;
+ height:170px;
+ margin-right:15px;
+}
+
+/* choose file's css */
+
+/*
+    org styling -- transition line effect ************************************
+*/
+
+
+.title h2{
+    color: darkorange; 
+    font-size: xx-large;   
+}
+
+ .title .sub-heading p{
+    color: black;
+}
+
+
+.sub-heading{
+    position: relative;
+   
+}
+
+.sub-heading:before{
+
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -3%;
+    width: 6%;
+    height: 3px;
+    background-color: darkorange;
+    z-index: 1;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    -ms-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.sub-heading:hover:before{
+    width: 24%;
+    margin-left: -12%;
+}
+
+.sub-heading:after{
+    
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -12%;
+    width: 24%;
+    height: 3px;
+    background-color: cadetblue;
+}
+
+.sub-heading p{
+    color: cadetblue;
+    display: inline-block;
+    padding: 0px 0px 20px;
+    position: relative;
+    line-height: 24px;
+    letter-spacing: 0.025em;
+}
+
+
+
+/* footer Css*/
+
+footer
+{
+    background-color: orange;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -mox-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    padding-top:10px;
+    padding-bottom:0px;
+    margin-top: 200px;
+
+}
+
+.social-icon a
+{
+    margin: 0 16px 20px 16px;
+    display: inline-block;
+}
+
+.social-icon .fa
+{
+   
+    
+    font-size: 30px;
+    color: deepskyblue;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    line-height: 2;
+    border-radius:50%;
+    transition: .3s;
+    border: 8px solid  #b1c9d1;
+    text-align: center;
+ 
+    
+}
+
+
+.social-icon a:hover .fa#fb
+{
+    color: white;
+    background-color: royalblue;
+    border:8px solid white;
+}
+.social-icon a:hover .fa#insta
+{
+    color: white;
+    background-color: deeppink;
+    border:8px solid white;
+}
+
+.social-icon a:hover .fa#t
+{
+    color: white;
+    background-color: deepskyblue;
+    border:8px solid white;
+}
+
+.social-icon a:hover .fa#wifi
+{
+    color: white;
+    background-color: lightseagreen;
+    border:8px solid white;
+}
+
+.social-icon a:hover .fa#yt
+{
+    color: white;
+    background-color: red;
+    border:8px solid white;
+}
+
+
+.bordernow
+{
+    width: 80px;
+    border-bottom: 2px solid white;
+    margin: 0 auto;
+    margin-top:20px;
+}
+
+
+#footer .last{
+    color: white;
+    font-weight: 500;
+}
+
+
+

@@ -1,0 +1,232 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <title>
+        Home Page
+    </title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css">
+
+<!-- FOnt Awesome Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<!--<script type="text/javascript" src="./lib/jquery-3.4.1.min.js"></script>-->
+<script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+   <script src="{% static 'js/caroufredsel.js' %}"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+<body id="container-fluid" >
+
+    <header>  
+      <div class="logo" style="float:left;"> 
+        <img src="{% static 'images/logo1.jpg' %}">
+      </div>
+      
+      <div class="dropdown" style="float:right;">
+        <button class="dropbtn">Contact <i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
+        <div class="dropdown-content">
+          <button>by message</button>
+          <button>by call</button>
+        </div>
+      </div>
+      
+      <div class="dropdown" style="float:right;">
+        <form action="aboutus.html">
+            <button class="dropbtn">About us</button>
+        </form>
+      </div>
+
+      <div class="dropdown" style="float:right;">
+            <button class="dropbtn" id="navbtn">Register</button>
+      </div>
+
+      <div class="dropdown" style="float:right;">
+        <form action="index.html">
+            <button class="dropbtn">Home</button>
+        </form>
+      </div>
+
+    </header>
+
+    <section class="slider">
+        <ul class="slider-carousel" id="slider-carousel">
+            
+        <li class="img1" id="{% static 'images/artwork.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.3)),url({% static 'images/artwork.jpg' %});">
+            <div class="content">
+              <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
+                <p>Our commitment is to always try to master the art of exemplary services & experience</p>
+                <i class="fa fa-instagram" id="insta"></i>
+                <i class="fa fa-twitter" id="twit"></i>
+                <i class="fa fa-facebook" id="fb"></i>
+                <p><br>
+                    
+                </p><br>
+        
+                <button class="btn btn-half" id="myBtn">Login Here</button>
+            </div>
+            
+        </li>
+            
+        <li class="img2" id="{% static 'images/dhokraart.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),url({% static 'images/dhokraart.jpg' %});">
+            <div class="content">
+              <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
+                <p>Our commitment is to always try to master the art of exemplary services & experience</p>
+                <i class="fa fa-instagram" id="insta"></i>
+                <i class="fa fa-twitter" id="twit"></i>
+                <i class="fa fa-facebook" id="fb"></i>
+                <p><br>
+                    
+                </p><br>
+        
+                <button class="btn btn-half" id="myBtn">Login Here</button>
+            </div>
+        </li>
+
+        <li class="img3" id="{% static 'images/bottleshandloom.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),url({% static 'images/bootleshandloom.png' %});">
+          <div class="content">
+            <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
+              <p>Our commitment is to always try to master the art of exemplary services & experience</p>
+              <i class="fa fa-instagram" id="insta"></i>
+              <i class="fa fa-twitter" id="twit"></i>
+              <i class="fa fa-facebook" id="fb"></i>
+              <p><br>
+                  
+              </p><br>
+      
+              <button class="btn btn-half" id="myBtn">Login Here</button>
+          </div>
+      </li>
+            
+        </ul>
+    </section>  
+
+    <!-- slider images closed-->
+
+    <!--login/signup popup opened-->
+    <!-- The Modal -->
+    <div id="myModal" class="modal" >
+
+         <!-- Modal content -->
+             
+            
+            <div class="tab1">
+              <span class="close" style="color: black;"><i class="fa fa-times" aria-hidden="true" ></i></span>
+              <button class="tablinks" id="loginBtn" onclick="openCity(event, 'login')">Login</button>
+              <button class="tablinks" id="signUpBtn" onclick="openCity(event, 'signup')">SignUp</button>
+              <hr style="border-color:black; width:100%;">
+            </div>
+
+            
+            <div id="login" class="tabcontent">
+
+              <fieldset>
+                <legend><h3>Login</h3></legend>
+                <form action="login" method="POST">
+                  {% csrf_token %}
+                Email :<input type="text" name="Mobile num."  placeholder="Enter Email" required="true"  ><br><br>
+                Password :<input type="password" name="passwordinput."  placeholder="Enter Password" required="true"  ><br><br>
+                <br><br>
+
+                {% if n %}
+                <p>Login Failed!!! ,invalid username password</p>
+                {% endif %}
+                <input type="submit" value="Login">
+              <br>
+              </form>
+              </fieldset>
+            </div>
+            
+            <div id="signup" class="tabcontent">
+
+              <table class="tab2">
+                <tr>
+                <td>
+                 <img class="tabimg" src="{% static 'images/tribal user.jpg' %}" id="Tribal" onclick="openInnerTab(event, 'tribalsignup')"/>
+                </td>
+                <td>
+                <img class="tabimg" src="{% static 'images/professional logo.png' %}" id="Professional" onclick="openInnerTab(event, 'proffsignup')"/>
+                </td>
+                </tr>
+                <tr>
+                  <td>Tribal Youth</td>
+                  <td>Professional</td>
+                </tr>
+              </table>
+
+              <div id="tribalsignup" class="innertab" >
+                <fieldset>
+                  <legend><h3>Register</h3></legend>
+                  <form action="/" method="POST">
+                    {% csrf_token %}
+                    <div style="color:red; font-weight: bold;">
+                      {% for message in messages %}
+                      <p>{{message}}!!!</p>
+                      {% endfor %}
+                    </div>
+                    
+                  Name : <input type="text" name="name"  placeholder="Enter your name"><br>
+                  Mobile :<input type="text" name="mobile" placeholder="Enter you Mobile number" required="true" pattern="([+]?\d{1,2})?([0-9]{10})"><br>
+                  Email : <input type="text" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+                  Password : <input type="password" name="password" placeholder="Password" ><br>
+                  Confirm Password : <input type="password" name="confpassword" placeholder="Re-enter Password" ><br>
+                  Category : <input type="radio" name="category" value="sc">SC
+                  <input type="radio" name="category" value="st">ST<br><br>
+                  <input type="submit" value="Sign up"/>
+
+                  </form>
+                </fieldset>
+              </div>
+              
+              <div id="proffsignup" class="innertab">
+                <fieldset>
+                  <legend><h3>Register</h3></legend>
+                  <form action="pro.html">
+                  Name : <input type="text" name="name"  placeholder="Enter your name"><br>
+                  Mobile :<input type="text" name="mobile" placeholder="Enter you Mobile number" required="true" pattern="([+]?\d{1,2})?([0-9]{10})"><br>
+                  Email : <input type="text" name="uname" placeholder="Enter your Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+                  Password : <input type="password" name="password" placeholder="Password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+                  Confirm Password : <input type="password" name="confpassword" placeholder="Re-enter Password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+                  Organization : <input type="text" name="orgname"  placeholder="Name of Organization"><br>
+                  <input type="submit" value="Sign up"/>
+                  </form>
+                </fieldset>
+              </div>
+
+            </div>
+
+    </div>
+
+    <!--login/signup pop up closed-->
+    <script src="{% static 'js/register.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+
+    {% if n %}
+    modal.style.display= "block";
+    console.log('hello')
+    {% endif %}
+
+    {% if passmiss %}
+    modal.style.display= "block";
+    document.getElementById("signup").style.display="block";
+    console.log('hello passmiss')
+    document.getElementById("login").style.display="none";
+    //document.getElementById("signup").style.display="block";
+    {% endif %}
+
+                
+    </script>
+</body id="container-fluid" >
+</html>

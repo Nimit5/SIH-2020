@@ -1,0 +1,147 @@
+*,body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+}
+
+header{
+    height: 0px;
+    line-height: 30px;
+    position: fixed;  
+    z-index: 1;
+    width: 100%;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color:transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    font-family: cursive;
+}
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    color: black;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  
+  .dropdown-content button {
+    color:white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: transparent;
+    border: none;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content button:hover {background-color:orange;font-weight: bold;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;
+                                    background-color: transparent;
+                                    color: #ddd;
+}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color:crimson;}
+
+/* 
+        end of navigation bar section
+*/
+
+
+.img1{
+    background-size: 100% 100%;    
+}
+
+.img2{
+   background-size: 100% 100%;
+}
+
+.img3{
+    background-size: 100% 100%;
+}
+
+
+section ul li i#insta:hover{
+    color: deeppink;
+}
+
+section ul li i#twit:hover{
+    color: cornflowerblue;
+}
+
+section ul li i#fb:hover{
+    color: royalblue;
+}
+
+.slider div{
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 4%;
+}
+
+.slider i{
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+.slider, .slider ul, .slider ul li{
+    height:670px;
+    width:100%;
+    color: white;
+    text-align: center;
+}
+
+.slider h2{
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.slider span{
+    color: orange;
+}
+
+.slider button{
+    padding: 10px, 40px;
+    margin-right: 8px;
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+    font-family:cursive;
+    font-size:20px;
+    line-height:150%;
+    border-radius: 10px 0px 10px 0px;
+    width: 30%;
+}
+
+.slider button.btn-half:hover{
+    background-color: darkorange;
+    color: black;
+}
+
+.slider button.btn-full:hover{
+    background-color: darkorange;
+    color: black;
+}

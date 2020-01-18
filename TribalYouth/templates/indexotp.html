@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <title>
+        Home Page
+    </title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css">
+
+<!-- FOnt Awesome Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
+    
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<!--<script type="text/javascript" src="./lib/jquery-3.4.1.min.js"></script>-->
+<script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+   <script src="{% static 'js/caroufredsel.js' %}"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+<body id="container-fluid" >
+
+    <header>  
+      <div class="logo" style="float:left;"> 
+        <img src="{% static 'images/logo1.jpg' %}">
+      </div>
+      
+      <div class="dropdown" style="float:right;">
+        <button class="dropbtn">Contact <i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
+        <div class="dropdown-content">
+          <button>by message</button>
+          <button>by call</button>
+        </div>
+      </div>
+      
+      <div class="dropdown" style="float:right;">
+        <form action="aboutus.html">
+            <button class="dropbtn">About us</button>
+        </form>
+      </div>
+
+      <div class="dropdown" style="float:right;">
+            <button class="dropbtn" id="navbtn">Register</button>
+      </div>
+
+      <div class="dropdown" style="float:right;">
+        <form action="index.html">
+            <button class="dropbtn">Home</button>
+        </form>
+      </div>
+
+    </header>
+
+    <section class="slider">
+        <ul class="slider-carousel" id="slider-carousel">
+            
+        <li class="img1" id="{% static 'images/artwork.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.3)),url({% static 'images/artwork.jpg' %});">
+            <div class="content">
+              <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
+                
+            </div>
+            
+        </li>
+            
+        <li class="img2" id="{% static 'images/dhokraart.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),url({% static 'images/dhokraart.jpg' %});">
+            <div class="content">
+              <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
+                
+            </div>
+        </li>
+
+        <li class="img3" id="{% static 'images/bottleshandloom.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),url({% static 'images/bootleshandloom.png' %});">
+          <div class="content">
+            <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
+                        </div>
+      </li>
+            
+        </ul>
+    </section>  
+
+    <!-- slider images closed-->
+
+    <!--login/signup popup opened-->
+    <!-- The Modal -->
+    <div id="myModal" class="modal" >
+
+         <!-- Modal content -->
+             
+          
+
+          
+          <div id="login" class="tabcontent">
+
+            <fieldset>
+              <legend><h3>Enter your OTP here</h3></legend>
+              <p>OTP is send to your Email ,please verify Your OTP<p>
+              <p><p>    
+              <form action="verifyotp" method="POST" >
+                {% csrf_token %}
+                <input type="hidden" value="{{userdata}}" name="userdata_hidden" />
+
+              OTP :<input type="text" id="otp" name="OTP"  placeholder="Enter OTP" required="true"  ><br><br>
+              
+              {% if n %}
+                <p>OTP not match</p>
+              {% endif %}
+
+              <br><br>
+              <input type="submit"  value="Verify">
+            <br>
+            </form>
+            </fieldset>
+          </div>
+          
+
+    </div>
+
+    <!--login/signup pop up closed-->
+    
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/otp.js' %}"></script>
+    <script>
+      let modal = document.getElementById("myModal"); // kya khulega
+      modal.style.display= "block";
+    </script>
+</body id="container-fluid" >
+</html>
