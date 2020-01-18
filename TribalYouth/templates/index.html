@@ -192,12 +192,13 @@
               <div id="proffsignup" class="innertab">
                 <fieldset>
                   <legend><h3>Register</h3></legend>
-                  <form action="pro.html">
+                  <form action="register_org" method="POST">
+                    {% csrf_token %}
                   Name : <input type="text" name="name"  placeholder="Enter your name"><br>
                   Mobile :<input type="text" name="mobile" placeholder="Enter you Mobile number" required="true" pattern="([+]?\d{1,2})?([0-9]{10})"><br>
-                  Email : <input type="text" name="uname" placeholder="Enter your Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
-                  Password : <input type="password" name="password" placeholder="Password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
-                  Confirm Password : <input type="password" name="confpassword" placeholder="Re-enter Password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+                  Email : <input type="text" name="email" placeholder="Enter your Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+                  Password : <input type="password" name="password" placeholder="Password" ><br>
+                  Confirm Password : <input type="password" name="confpassword" placeholder="Re-enter Password" ><br>
                   Organization : <input type="text" name="orgname"  placeholder="Name of Organization"><br>
                   <input type="submit" value="Sign up"/>
                   </form>

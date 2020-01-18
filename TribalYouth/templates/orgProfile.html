@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>MyOrgProfile</title>
 
-    <link rel="stylesheet" type="text/css" href="css/orgprofile.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/orgprofile.css' %}">
 
     <!-- FOnt Awe some Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,7 +19,7 @@
         src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="js/caroufredsel.js"></script>
+    <script src="{% static 'js/caroufredsel.js' %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
@@ -69,7 +70,7 @@
     <fieldset>
         <legend style="font-family:cursive"><mark>Your Details:</mark></legend>
         <div class="upload-btn-wrapper" style="margin-left: 0;">
-            <img src="images/orglogo2.jpg" alt="not found">
+            <img src="{% static 'images/orglogo2.jpg' %}" alt="not found">
                 <button class="addbtn">+</button>
                 <input type="file" name="myfile" />
         </div><br><br>

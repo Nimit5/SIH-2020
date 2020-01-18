@@ -11,11 +11,10 @@ class TribalUser(models.Model):
         return self.email
 
 class Organisation(models.Model):
-    email=models.CharField(max_length=50)
-    password=models.CharField(max_length=25)
-    name=models.CharField(max_length=80)
-    mobile=models.IntegerField()
-    organisation_name=models.CharField(max_length=100)
+    email=models.CharField(max_length=50, default=' ')
+    desc=models.CharField(max_length=600,default=' ')
+    mobile=models.IntegerField(max_length=10)
+    org_name=models.CharField(max_length=100, default=' ')
 
     def __str__(self):
         return self.email

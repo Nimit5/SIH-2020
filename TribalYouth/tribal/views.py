@@ -6,7 +6,7 @@ import random
 from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth.models import User, auth
-from . models import TribalUser, TribalSkills
+from . models import TribalUser, TribalSkills,Organisation
 from PIL import Image
 from .forms import Skill_Form
 
@@ -60,7 +60,6 @@ def index(request):
         name=request.POST.get('name','')
         phone=request.POST.get('mobile','')
         password=request.POST.get('password','')
-        email1=request.User.get_username()
         confirmpassword=request.POST.get('confpassword','')
         if(password==confirmpassword):
             if User.objects.filter(email=email).exists():
@@ -92,6 +91,36 @@ def index(request):
             return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill})
         else:
             return render(request,'index.html',{'n':False})
+
+def registerorg(request):
+    if request.method=='POST':
+        email=request.POST.get('email','')
+        name=request.POST.get('name','')
+        phone=request.POST.get('mobile','')
+        password=request.POST.get('password','')
+        confirmpassword=request.POST.get('confpassword','')
+        orgname=request.POST.get('orgname','')
+        if(password==confirmpassword):
+            if User.objects.filter(email=email).exists():
+                messages.info(request,'Email Taken')
+                return render(request,'index.html',{'passmiss':True})
+            else:
+                user =User.objects.create_user(username=email,password=password,email=email,first_name=name)
+                user.save()
+                print(email)
+                print(phone)
+                print(orgname)
+                userorg=Organisation(email=email,desc=' ',mobile=phone, org_name=orgname)
+                userorg.save()
+                user = auth.authenticate(username=email,password=password)
+                auth.login(request, user)
+                return render(request,'orgs.html')
+        else:
+            messages.info(request,'password mismatch')
+            return render(request,'index.html',{'passmiss':True})
+
+
+
 
 def generateOTP() :   
     string = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -135,15 +164,20 @@ def login(request):
     email=request.POST.get('Mobile num.','')
     password=request.POST.get('passwordinput.','')
     
-    user = auth.authenticate(username=email,password=password)
-    
+    user = auth.authenticate(username=email,password=password)    
     if user is not None:
+
         auth.login(request, user)
         email1=request.user.get_username()
-        skill=getskills(email1)
-        first_skill=skill[0]
-        skill=skill[1:]
-        return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill})
+        user_log_in_tribal=TribalUser.objects.filter(email=email1)
+        user_log_in_org=TribalUser.objects.filter(email=email1)
+        if(len(user_log_in_tribal)==0):
+            return render(request,'orgs.html')
+        else:
+            skill=getskills(email1)
+            first_skill=skill[0]
+            skill=skill[1:]
+            return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill})
     else:
         return render(request,'index.html',{'n':True})
 
@@ -179,3 +213,10 @@ def show_profile_tribal(request):
         s.append(i.title)
     
     return render(request,'MyProfile.html',{'email':email,'name':name,'phone':phone,'category':category,'skill':s})
+
+def orgProfile(request):
+    return render(request,'orgProfile.html')
+
+def contactorg(request):
+    return render(request,'contact.html')
+

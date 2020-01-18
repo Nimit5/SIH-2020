@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +6,7 @@
 
 <head>
     <title>Contact Aakrati</title>
-    <link href="css/contact.css" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/contact.css' %}" rel="stylesheet" type="text/css">
     
         <!-- FOnt Awesome Icon -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
@@ -18,7 +19,7 @@
         <script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- Latest compiled JavaScript -->
-          <script src="js/caroufredsel.js"></script>
+          <script src="{% static 'js/caroufredsel.js' %}"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
@@ -26,7 +27,7 @@
     <body>
 
      
-  <div style="background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('images/reception.jpg');">
+  <div style="background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url({% static 'images/reception.jpg' %});">
    <!-- navigation is here started -->
 
    <nav id="navb" class="navbar navbar-inverse">

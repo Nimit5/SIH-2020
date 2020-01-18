@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>  Organisation Page</title> 
-        <link href="css/org.css" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/org.css' %}" rel="stylesheet" type="text/css">
         
 
         <!-- FOnt Awesome Icon -->
@@ -16,7 +17,7 @@
         <script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <!-- Latest compiled JavaScript -->
-          <script src="js/caroufredsel.js"></script>
+          <script src="{% static 'js/caroufredsel.js' %}"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
  
@@ -26,7 +27,7 @@
   
   <!-- background section opened -->
 
-  <div class="bgimg" style="background-image: url('images/org2.jpg');">
+  <div class="bgimg" style="background-image: url({% static 'images/org2.jpg' %});">
        
     <!-- navigation is here started -->
 
@@ -49,8 +50,8 @@
                 <li class="active"><a href="orgs.html"><i class="fa fa-bars"></i> Home</a></li>
                 <li><a href="#tribes"><i class="fa fa-ravelry" aria-hidden="true"></i> Tribes</a></li>
                 <li><button class="btn btn-danger navbar-btn" id="request"><i class="fa fa-plus" aria-hidden="true"></i> view requests</button></li>
-                <li><a href="orgProfile.html"><i class="fa fa-edit"></i> profile</a></li>
-                <li><a href="#contact"><i class="fa fa-globe"></i> contact us</a></li>
+                <li><a href="orgProfile"><i class="fa fa-edit"></i> profile</a></li>
+                <li><a href="contactorg"><i class="fa fa-globe"></i> contact us</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>  contact
                     </a>
@@ -59,7 +60,7 @@
                       <li><a href="#">by  call</a></li>
                     </ul>
                 </li>
-                <li><button class="btn btn-danger navbar-btn">Sign out</button></li> 
+                <li><a href="/logout" class="btn btn-danger" style="color: white; padding: 5px;margin-top: 8px;"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a></li>
               </ul>
             </div>
     </nav> 
@@ -91,7 +92,7 @@
             
                   <fieldset>
                     <legend >Ayush Mahajan</legend>
-                     <p><img src="images/vases.jpg" alt="Pineapple" >
+                     <p><img src="{% static 'images/vases.jpg' %}" alt="Pineapple" >
                       <table style="height:fit-content;color: black;font-family: cursive;">
                         <tr>
                           <td><b>Name:</b></td>
@@ -129,7 +130,7 @@
             
                   <fieldset>
                     <legend >Ayush Mahajan</legend>
-                     <p><img src="images/vases.jpg" alt="Pineapple" >
+                     <p><img src="{% static 'images/vases.jpg' %}" alt="Pineapple" >
                       <table style="height:fit-content;color: black;font-family: cursive;">
                         <tr>
                           <td><b>Name:</b></td>
@@ -167,7 +168,7 @@
             
                   <fieldset>
                     <legend >Ayush Mahajan</legend>
-                     <p><img src="images/vases.jpg" alt="Pineapple" >
+                     <p><img src="{% static 'images/vases.jpg' %}" alt="Pineapple" >
                       <table style="height:fit-content;color: black;font-family: cursive;">
                         <tr>
                           <td><b>Name:</b></td>
@@ -205,7 +206,7 @@
             
                   <fieldset>
                     <legend >Ayush Mahajan</legend>
-                     <p><img src="images/vases.jpg" alt="Pineapple" >
+                     <p><img src="{% static 'images/vases.jpg' %}" alt="Pineapple" >
                       <table style="height:fit-content;color: black;font-family: cursive;">
                         <tr>
                           <td><b>Name:</b></td>
