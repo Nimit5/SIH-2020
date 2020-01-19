@@ -6,7 +6,7 @@ import random
 from django.conf import settings
 from django.core.mail import send_mail
 from django.contrib.auth.models import User, auth
-from . models import TribalUser, TribalSkills,Organisation
+from . models import TribalUser, TribalSkills,Organisation,Apply_tribal_to_org,Invite_tribal_to_org
 from PIL import Image
 from .forms import Skill_Form
 
@@ -34,7 +34,8 @@ def uploadskill(request):
             skill=getskills(email1)
             first_skill=skill[0]
             skill=skill[1:]
-            return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill})
+            orglist=getorganizationslist()
+            return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill,'orglist':orglist})
         else:
             return HttpResponse('hello inside')
     else:
@@ -85,10 +86,19 @@ def index(request):
     else:
         if request.user.is_authenticated:
             email1=request.user.get_username()
-            skill=getskills(email1)
-            first_skill=skill[0]
-            skill=skill[1:]
-            return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill})
+            user_log_in_tribal=TribalUser.objects.filter(email=email1)
+            user_log_in_org=TribalUser.objects.filter(email=email1)
+            if(len(user_log_in_tribal)==0):
+                triballist=gettribalslist()
+                usershow=getuser(triballist)
+                print('inside- ',usershow)
+                return render(request,'orgs.html',{'tl':triballist,'usershow':usershow})
+            else:
+                skill=getskills(email1)
+                first_skill=skill[0]
+                skill=skill[1:]
+                orglist=getorganizationslist()
+                return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill,'orglist':orglist})
         else:
             return render(request,'index.html',{'n':False})
 
@@ -106,15 +116,19 @@ def registerorg(request):
                 return render(request,'index.html',{'passmiss':True})
             else:
                 user =User.objects.create_user(username=email,password=password,email=email,first_name=name)
-                user.save()
+                
                 print(email)
                 print(phone)
                 print(orgname)
                 userorg=Organisation(email=email,desc=' ',mobile=phone, org_name=orgname)
                 userorg.save()
+                user.save()
                 user = auth.authenticate(username=email,password=password)
                 auth.login(request, user)
-                return render(request,'orgs.html')
+                triballist=gettribalslist()
+                usershow=getuser(triballist)
+                print('inside- ',usershow)
+                return render(request,'orgs.html',{'tl':triballist,'usershow':usershow})
         else:
             messages.info(request,'password mismatch')
             return render(request,'index.html',{'passmiss':True})
@@ -156,7 +170,8 @@ def verifyotp(request):
         skill=getskills(email1)
         first_skill=skill[0]
         skill=skill[1:]
-        return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill})
+        orglist=getorganizationslist()
+        return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill,'orglist':orglist})
     else:
         return render(request,'indexotp.html',{'userdata':a,'n':True})
 
@@ -172,18 +187,32 @@ def login(request):
         user_log_in_tribal=TribalUser.objects.filter(email=email1)
         user_log_in_org=TribalUser.objects.filter(email=email1)
         if(len(user_log_in_tribal)==0):
-            return render(request,'orgs.html')
+            triballist=gettribalslist()
+            usershow=getuser(triballist)
+            print('inside- ',usershow)
+            return render(request,'orgs.html',{'tl':triballist,'usershow':usershow})
         else:
             skill=getskills(email1)
             first_skill=skill[0]
             skill=skill[1:]
-            return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill})
+            orglist=getorganizationslist()
+            return render(request,'tribal.html',{'email':email1, 'skill':skill,'first_skill':first_skill,'orglist':orglist})
     else:
         return render(request,'index.html',{'n':True})
 
 
-def apply(request):
-    return render(request,'apply.html')
+def apply(request,myid):
+    print('hello i am here')
+    org_detail=Organisation.objects.filter(id=myid)
+    email=request.user.get_username()
+    print(org_detail)
+    name=request.user.get_full_name()
+    my_detail= TribalUser.objects.filter(email=email)
+    s=[]
+    skill=getskills(email)
+    for i in skill:
+        s.append(i.title)
+    return render(request,'apply.html',{'org_detail':org_detail[0],'my_detail':my_detail[0], 'name':name,'skill':s})
 
 def getskills(email1):
     skill=[]
@@ -220,3 +249,69 @@ def orgProfile(request):
 def contactorg(request):
     return render(request,'contact.html')
 
+def getorganizationslist():
+    org=Organisation.objects.all()
+    return org
+
+def gettribalslist():
+    trib=TribalUser.objects.all()
+    print(trib)
+    return trib
+
+def makeapplication(request):
+    if request.method=='POST':
+        org_email=request.POST.get('email','')
+        tribalemail=request.user.get_username()
+        application=request.POST.get('application','')
+        appl=Apply_tribal_to_org(tribalemail=tribalemail,orgemail=org_email,application=application)
+        appl.save()
+        skill=getskills(tribalemail)
+        first_skill=skill[0]
+        skill=skill[1:]
+        orglist=getorganizationslist()
+        return render(request,'tribal.html',{'email':tribalemail, 'skill':skill,'first_skill':first_skill,'orglist':orglist})
+
+
+
+def getuser(triballist):
+    s=[]
+    for i in triballist:
+        use=User.objects.filter(username=i.email)
+        s.append(use)
+    print('inside')
+    return s
+
+def invite(request,myid):
+    usertribalinfo=User.objects.filter(id=myid)
+    email=request.user.get_username()
+
+    print('hello- ',email)
+    userorg=Organisation.objects.filter(email=email)
+    print(usertribalinfo)
+    print(userorg)
+    return render(request,'invite.html',{'usertribal':usertribalinfo[0],'userorg':userorg[0]})
+
+def makeinvitation(request):
+    if request.method=='POST':
+        tribal_email=request.POST.get('email','')
+        orgemail=request.user.get_username()
+        application=request.POST.get('application','')
+        appl=Invite_tribal_to_org(tribalemail=tribal_email,orgemail=orgemail,application=application)
+        appl.save()
+        triballist=gettribalslist()
+        usershow=getuser(triballist)
+        print('inside- ',usershow)
+        return render(request,'orgs.html',{'tl':triballist,'usershow':usershow})
+
+def invitation(request):
+    email=request.user.get_username()
+    myrequest=Invite_tribal_to_org.objects.filter(tribalemail=email)
+
+    
+    return render(request,'Receivedinvitation.html',{'my':myrequest})
+
+def myrequests(request):
+    email=request.user.get_username()
+    myrequest=Apply_tribal_to_org.objects.filter(tribalemail=email)
+    print(myrequest)
+    return render(request,'sentRequest.html',{'my':myrequest})

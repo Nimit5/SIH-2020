@@ -59,6 +59,10 @@ div#addupload{
     font-size:100%; 
 }
 
+div.item img{
+    
+}
+
 div.bgimg{
     width: 100%;
     height: 550px;

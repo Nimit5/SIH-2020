@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.index,name="Index"),
     path('verifyotp', views.verifyotp,name="verifyotp"),
     path('login', views.login,name="login"),
-    path('apply', views.apply,name="apply"),
+    path('apply/<int:myid>', views.apply,name="apply"),
     path('uploadskill', views.uploadskill,name="uploadskill"),
     path('logout', views.logout,name="logout"),
     path('show_skill/<int:myid>', views.show_skill,name="show_skill"),
@@ -16,6 +16,12 @@ urlpatterns = [
     path('register_org', views.registerorg,name="registerorg"),
     path('orgProfile', views.orgProfile,name="orgProfile"),
     path('contactorg', views.contactorg,name="contactorg"),
+    path('makeapplication', views.makeapplication,name="makeapplication"),
+    path('invite/<int:myid>', views.invite,name="invite"),
+    path('makeinvitation', views.makeinvitation,name="makeinvitation"),
+    path('myrequests', views.myrequests,name="myrequests"),
+    path('invitations', views.invitation,name="invitation"),
+    
 ]
 if settings.DEBUG:
     urlpatterns =urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

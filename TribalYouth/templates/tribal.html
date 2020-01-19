@@ -49,15 +49,16 @@
                 <li class="active"><a href="/"><i class="fa fa-bars"></i> Home</a></li>
                 <li><button class="btn btn-danger navbar-btn" id="skills"><i class="fa fa-paint-brush"></i> My Skills</button></li>
                 <li><a href="#organisation"><i class="fa fa-ravelry" aria-hidden="true"></i> Organisation</a></li>
-                <li><button class="btn btn-danger navbar-btn" id="invite"><i class="fa fa-plus" aria-hidden="true"></i> Invitations</button></li>
+                <li><a href="/myrequests"><i class="fa fa-ravelry" aria-hidden="true"></i> My Requests</a></li>
+                <li><a href="/invitations"><i class="fa fa-ravelry" aria-hidden="true"></i> Invitations</a></li>
                 <li><a href="/show_profile"><i class="fa fa-edit"></i> Profile</a></li>
                 <li><a href="aboutus.html"><i class="fa fa-globe"></i> About us</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>  contact
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">by message</a></li>
-                      <li><a href="#">by  call</a></li>
+                      <li><a href="contactorg">by message</a></li>
+                      <li><a href="contactorg">by  call</a></li>
                     </ul>
                 </li>
                 <li><a href="/logout" class="btn btn-danger" style="color: white; padding: 5px;margin-top: 8px;"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a></li>
@@ -104,16 +105,16 @@
               <div class="carousel-inner" >
                 
                 
-                <div class="item active">
+                 <div class="item active" style="max-width: 40%;">
                   <img src="{{first_skill.img.url}}"  alt="Los Angeles">
                   <button class="btn btn-success">Download</button>
                   <a href="show_skill/{{first_skill.id}}"><button class="btn btn-success">View Details</button></a>
                 </div>
-                
+                 
                 
                 {% for i in skill %}
-                <div class="item">
-                  <img src="{{i.img.url}}" style="max-width: 100%; height: 200px;" alt="Chicago">
+                <div class="item " style="max-width: 40%;">
+                  <img src="{{i.img.url}}" alt="Chicago">
                   <button class="btn btn-success">Download</button>
                   <a href="show_skill/{{i.id}}"> <button class="btn btn-success">View Details</button></a>
                 </div>
@@ -162,25 +163,25 @@
           </div>
 
 
+          {% for i in orglist %}
            <div style="border: 2px solid black;">
             
             <fieldset>
-              <legend >Infosys</legend>
+              <legend >{{i.org_name}}</legend>
               
             <p><img src="{% static 'images/org1.jpg' %}" alt="Pineapple" >
-              Infosys Limited is an Indian multinational corporation that provides business consulting, information technology and outsourcing services. It has its headquarters in Bangalore, Karnataka, India.[3]
-              Infosys Limited is an Indian multinational corporation that provides business consulting, information technology and outsourcing services. It has its headquarters in Bangalore, Karnataka, India.[3]
-              Infosys Limited is an Indian multinational corporation that provides business consulting, information technology and outsourcing services. It has its headquarters in Bangalore, Karnataka, India.[3]
-
-              Infosys is the second-largest Indian IT company after Tata Consultancy Services by 2017 revenue and 596th largest public company in the world based on revenue.
+              <b>Email</b> - {{i.email}}<br><br>  
+              {{i.desc}}<br>              
             </p>
             <button class="btn btn-primary">View More</button>
-            <form action="apply" method="POST">
+            <form action="apply/{{i.id}}" method="POST">
               {% csrf_token %}
               <input type="submit" class="btn btn-warning" value="Apply">
             </form>
             </fieldset>
           </div>
+          <br><br><br>
+          {% endfor %}
 
           <br>
           <br>  

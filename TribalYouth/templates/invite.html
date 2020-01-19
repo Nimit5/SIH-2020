@@ -80,7 +80,7 @@
                         <table style="margin-left: 20%; font-size: 120%;">
                           <tr>
                             <td><b style="font-family:cursive;">Name: </b></td>
-                            <td><input type="text" value="{{name}}"><br></td>
+                            <td><input type="text" value="{{usertribal.first_name}}"><br></td>
                           </tr>
                           <tr>
                             <td><b style="font-family:cursive;">Phone: </b></td>
@@ -88,7 +88,7 @@
                           </tr>
                           <tr>
                             <td> <b style="font-family:cursive;">Email: </b></td>
-                            <td><input type="text" value="{{my_detail.email}}"><br></td>
+                            <td><input type="text" value="{{usertribal.email}}"><br></td>
                           </tr>
                           <tr>
                             <td><b style="font-family:cursive;">City/Village: </b></td>
@@ -96,7 +96,7 @@
                           </tr>
                           <tr>
                             <td><b style="font-family:cursive;">Category: </b></td>
-                            <td><input type="text" value="{{my_detail.category}}"><br></td>
+                            <td><input type="text" value="{{usertribal.category}}"><br></td>
                           </tr>
                           <tr>
                             <td><b style="font-family:cursive;">Skills: </b></td>
@@ -119,15 +119,15 @@
 
             <div class="col-sm-6">
 
-                <h4 style="font-family:cursive; font-size: large; font-weight: bold; "><mark>{{org_detail.org_name}}</mark></h4>  
+                <h4 style="font-family:cursive; font-size: large; font-weight: bold; "><mark>{{userorg.org_name}}</mark></h4>  
                 <p style="color: white;"><img src="{% static 'images/org1.jpg' %}" alt="Pineapple" >
-                  {{org_detail.desc}}
+                  {{userorg.desc}}
                   </p><br><br>
                   <p><b style="font-family:cursive; font-size: large; "><mark>Application:</mark></b></p>
                   
-                  <form action="/makeapplication" method="POST">
+                  <form action="/makeinvitation" method="POST">
                     {% csrf_token %}
-                    <input type="hidden" value="{{org_detail.email}}" name="email">
+                    <input type="hidden" value="{{usertribal.email}}" name="email">
                     <textarea style="font-family: cursive;" rows="15%" cols="55%" name="application"
                     placeholder="write your job application here"></textarea><br>
                     <input type="submit" value="Apply">

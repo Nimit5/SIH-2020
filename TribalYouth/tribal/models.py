@@ -28,3 +28,18 @@ class TribalSkills(models.Model):
     def __str__(self):
         return self.title
 
+class Apply_tribal_to_org(models.Model):
+    tribalemail=models.CharField(max_length=80,default='')
+    orgemail=models.CharField(max_length=80,default='')
+    application=models.CharField(max_length=1000,default='')
+    def __str__(self):
+        return self.tribalemail
+
+class Invite_tribal_to_org(models.Model):
+    tribalemail=models.CharField(max_length=80,default='')
+    orgemail=models.CharField(max_length=80,default='')
+    application=models.CharField(max_length=1000,default='')
+    
+    def __str__(self):
+        return self.tribalemail
+    
