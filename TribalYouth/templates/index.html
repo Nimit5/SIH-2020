@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 
@@ -27,15 +28,31 @@
 </head>
 
 
-<body id="container-fluid" >
+<bodyid="container-fluid" >
 
+     
     <header>  
+      {% get_current_language as LANGUAGE_CODE %}
+      <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ redirect_to }}">
+        <select
+            name="language"> {% get_current_language as LANGUAGE_CODE %} {% get_available_languages as LANGUAGES %} {% get_language_info_list for LANGUAGES as languages %}
+            {% for language in languages %}
+                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}
+                        selected{% endif %}> {{ language.name_local }} ({{ language.code }})
+                </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Go"/>
+    </form>
+
       <div class="logo" style="float:left;"> 
         <img src="{% static 'images/logo1.jpg' %}">
       </div>
       
       <div class="dropdown" style="float:right;">
-        <button class="dropbtn">Contact <i class="fa fa-angle-double-down" aria-hidden="true"></i></button>
+        <button class="dropbtn"><i class="fa fa-phone" style="font-size: xx-large;"></i>{% trans "Contact" %}  <i class="fa fa-angle-double-down" ></i></button>
         <div class="dropdown-content">
           <a href="contactorg"><button>by message</button></a>
          <a href="contactorg"><button>by call</button></a>
@@ -44,20 +61,20 @@
       
       <div class="dropdown" style="float:right;">
         <form action="aboutus.html">
-            <button class="dropbtn">About us</button>
+            <button class="dropbtn"><i class="fa fa-question" style="font-size: xx-large;"></i> About us</button>
         </form>
       </div>
 
       <div class="dropdown" style="float:right;">
-            <button class="dropbtn" id="navbtn">Register</button>
+            <button class="dropbtn" id="navbtn"><i class="fa fa-address-book" style="font-size: xx-large;"></i> Register</button>
       </div>
       <div class="dropdown" style="float:right;">
-        <button class="dropbtn" id="navbtn">Store</button>
+        <button class="dropbtn" id="navbtn"><i class="fa fa-shopping-cart" style="font-size: xx-large;"></i> Store</button>
      </div>
 
       <div class="dropdown" style="float:right;">
         <a href="">
-            <button class="dropbtn">Home</button>
+            <button class="dropbtn"><i class="fa fa-home" style="font-size: xx-large;"></i> Home</button>
         </a>
       </div>
 
@@ -77,7 +94,7 @@
                     
                 </p><br>
         
-                <button class="btn btn-half" id="myBtn">Login Here</button>
+                <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> Login Here</button>
             </div>
             
         </li>
@@ -93,7 +110,7 @@
                     
                 </p><br>
         
-                <button class="btn btn-half" id="myBtn">Login Here</button>
+                <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> Login Here</button>
             </div>
         </li>
 
@@ -108,7 +125,7 @@
                   
               </p><br>
       
-              <button class="btn btn-half" id="myBtn">Login Here</button>
+              <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> Login Here</button>
           </div>
       </li>
             
@@ -118,14 +135,16 @@
     <!-- slider images closed-->
 
     <!--login/signup popup opened-->
+    
     <!-- The Modal -->
+    
     <div id="myModal" class="modal" >
 
          <!-- Modal content -->
              
             
             <div class="tab1">
-              <span class="close" style="color: black;"><i class="fa fa-times" aria-hidden="true" ></i></span>
+              <span class="close" style="color: black; font-size: xx-large; color: red;"><i class="fa fa-times"></i></span>
               <button class="tablinks" id="loginBtn" onclick="openCity(event, 'login')">Login</button>
               <button class="tablinks" id="signUpBtn" onclick="openCity(event, 'signup')">SignUp</button>
               <hr style="border-color:black; width:100%;">
@@ -145,7 +164,7 @@
                 {% if n %}
                 <p>Login Failed!!! ,invalid username password</p>
                 {% endif %}
-                <input type="submit" value="Login">
+                <input type="submit" value="Login" style="width: 40%;">
               <br>
               </form>
               </fieldset>
@@ -186,7 +205,7 @@
                   Confirm Password : <input type="password" name="confpassword" placeholder="Re-enter Password" ><br>
                   Category : <input type="radio" name="category" value="sc">SC
                   <input type="radio" name="category" value="st">ST<br><br>
-                  <input type="submit" value="Sign up"/>
+                  <input type="submit" value="Sign up" style="width: 40%;" />
 
                   </form>
                 </fieldset>
@@ -213,6 +232,7 @@
     </div>
 
     <!--login/signup pop up closed-->
+    
     <script src="{% static 'js/register.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script>
@@ -232,5 +252,5 @@
 
                 
     </script>
-</body id="container-fluid" >
+</body>
 </html>

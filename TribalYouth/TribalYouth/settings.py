@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -111,6 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE= 'hi'
 
 TIME_ZONE = 'UTC'
 
@@ -129,9 +131,12 @@ STATICFILES_DIRS= [
     os.path.join('static')
 ]
 
-
+LANGUAGES=[('en','English'),('hi','Hindi')]
 STATIC_ROOT= os.path.join('assets')
 
+LOCALE_PATHS=[
+    os.path.join(BASE_DIR,'locale')
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

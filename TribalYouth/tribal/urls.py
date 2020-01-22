@@ -3,8 +3,10 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-urlpatterns = [
 
+
+urlpatterns = [
+    
     path('', views.index,name="Index"),
     path('verifyotp', views.verifyotp,name="verifyotp"),
     path('login', views.login,name="login"),
@@ -21,7 +23,10 @@ urlpatterns = [
     path('makeinvitation', views.makeinvitation,name="makeinvitation"),
     path('myrequests', views.myrequests,name="myrequests"),
     path('invitations', views.invitation,name="invitation"),
-    
+    path('scheme', views.scheme,name="scheme"),
+    path('viewrequest', views.viewrequest,name="viewrequest"),
+    path('sendinvitationoforg', views.sendinvitationoforg,name="sendinvitationoforg"),
+    path('viewskill', views.viewskill,name="viewskill"),
 ]
 if settings.DEBUG:
     urlpatterns =urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

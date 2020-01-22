@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>
             Requests from tribals
         </title>
-        <link href="css/request.css" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/request.css' %}" rel="stylesheet" type="text/css">
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -17,7 +18,7 @@
         src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="js/caroufredsel.js"></script>
+    <script src="{% static 'js/caroufredsel.js' %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     </head>
@@ -43,16 +44,9 @@
             </div>
           </form>
           <ul class="nav navbar-nav" style="float: right;">
-            <li class="active"><a href="tribal.html"><i class="fa fa-bars"></i> Home</a></li>        
-            <li><a href="aboutus.html"><i class="fa fa-globe"></i> About us</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>  contact
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">by message</a></li>
-                  <li><a href="#">by  call</a></li>
-                </ul>
-            </li>
+            <li class="active"><a href="/"><i class="fa fa-bars"></i> Home</a></li>        
+            <li><a href="contactorg"><i class="fa fa-globe"></i> About us</a></li>
+            
             <li><button class="btn btn-danger navbar-btn">Sign out</button></li> 
           </ul>
         </div>
@@ -61,131 +55,30 @@
           
      <!-- n request divisions-->     
      
+{% load index %}
+     {% for i in len %}
     <div class="requests">
         <button class="btn btn-danger" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Reject</button> 
         <button class="btn btn-success" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Accept</button> 
         <button class="btn btn-primary" style="float:right; width:10%; font-size:120%; margin:0.7%;"> View Profile</button>
         <table id="req_content" >
             <tr>
-                <td class="fa fa-bell" style="color: gold;margin: 15%; font-size: 180%;"></td>
+                
                 <td style="width:40%;">
-                    <textarea style="width:120%; border: none; line-height:130%;">
-                        Name: Deepanshu Bhalla
-                    </textarea>
+                    <p style="width:120%; border: none; line-height:130%;">
+                        Name: {{recieved_requests|index:i}} 
+                    </p>
                 </td>
                 <td>
                     <textarea style="width:90%; border: none; line-height:130%;">
-                    Skills : Painting,Singing,Sketching
+                    Skills : {{tribalskill|index:i}}
                     </textarea>
                 </td>
             </tr>
         </table>
     </div>
+  {% endfor %}
 
-    <div class="requests">
-        <button class="btn btn-danger" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Reject</button> 
-        <button class="btn btn-success" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Accept</button> 
-        <button class="btn btn-primary" style="float:right; width:10%; font-size:120%; margin:0.7%;"> View Profile</button> 
-        <table id="req_content" >
-            <tr>
-                <td class="fa fa-bell" style="color: gold;margin: 15%; font-size: 180%;"></td>
-                <td style="width:40%;">
-                    <textarea style="width:120%; border: none; line-height:130%;">
-                        Name: Harsh Vishwakarma
-                    </textarea>
-                </td>
-                <td>
-                    <textarea style="width:90%; border: none; line-height:130%;">
-                    Skills : Painting,Dancing
-                    </textarea>
-                </td>
-            </tr>
-        </table> 
-    </div>
-    
-    <div class="requests">
-        <button class="btn btn-danger" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Reject</button> 
-        <button class="btn btn-success" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Accept</button> 
-        <button class="btn btn-primary" style="float:right; width:10%; font-size:120%; margin:0.7%;"> View Profile</button> 
-        <table id="req_content" >
-            <tr>
-                <td class="fa fa-bell" style="color: gold;margin: 15%; font-size: 180%;"></td>
-                <td style="width:40%;">
-                    <textarea style="width:120%; border: none; line-height:130%;">
-                        Name: Harshada Nimbhorkar
-                    </textarea>
-                </td>
-                <td>
-                    <textarea style="width:90%; border: none; line-height:130%;">
-                    Skills : Painting,Dancing
-                    </textarea>
-                </td>
-            </tr>
-        </table>
-    </div>
-    
-    <div class="requests">
-        <button class="btn btn-danger" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Reject</button> 
-        <button class="btn btn-success" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Accept</button> 
-        <button class="btn btn-primary" style="float:right; width:10%; font-size:120%; margin:0.7%;"> View Profile</button> 
-        <table id="req_content" >
-            <tr>
-                <td class="fa fa-bell" style="color: gold;margin: 15%; font-size: 180%;"></td>
-                <td style="width:40%;">
-                    <textarea style="width:120%; border: none; line-height:130%;">
-                        Name: Ayush Mahajan
-                    </textarea>
-                </td>
-                <td>
-                    <textarea style="width:90%; border: none; line-height:130%;">
-                    Skills : Painting,Dancing
-                    </textarea>
-                </td>
-            </tr>
-        </table> 
-    </div>
-    
-    <div class="requests">
-        <button class="btn btn-danger" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Reject</button> 
-        <button class="btn btn-success" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Accept</button> 
-        <button class="btn btn-primary" style="float:right; width:10%; font-size:120%; margin:0.7%;"> View Profile</button> 
-        <table id="req_content" >
-            <tr>
-                <td class="fa fa-bell" style="color: gold;margin: 15%; font-size: 180%;"></td>
-                <td style="width:40%;">
-                    <textarea style="width:120%; border: none; line-height:130%;">
-                        Name: Karan Saxena
-                    </textarea>
-                </td>
-                <td>
-                    <textarea style="width:90%; border: none; line-height:130%;">
-                    Skills : Painting,Dancing
-                    </textarea>
-                </td>
-            </tr>
-        </table> 
-    </div>
-    
-    <div class="requests">
-        <button class="btn btn-danger" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Reject</button> 
-        <button class="btn btn-success" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Accept</button> 
-        <button class="btn btn-primary" style="float:right; width:10%; font-size:120%; margin:0.7%;"> View Profile</button> 
-        <table id="req_content" >
-            <tr>
-                <td class="fa fa-bell" style="color: gold;margin: 15%; font-size: 180%;"></td>
-                <td style="width:40%;">
-                    <textarea style="width:120%; border: none; line-height:130%;">
-                        Name: Nimit Jain
-                    </textarea>
-                </td>
-                <td>
-                    <textarea style="width:90%; border: none; line-height:130%;">
-                    Skills : Painting,Dancing
-                    </textarea>
-                </td>
-            </tr>
-        </table> 
-    </div>
     
     <!-- n request divisions-->   
           

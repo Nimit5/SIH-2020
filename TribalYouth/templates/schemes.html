@@ -1,0 +1,17 @@
+
+
+{% load index %}
+<html>
+    <body>
+        {% for i in sizer %}
+        <ul><li><h3>{{scheme_heading|index:i}}</h3></li></ul>
+        <ul> 
+        {% for j in lister_size_ranger|index:i %}
+        <li>
+        <a href="{{link_url|index:i|index:j}}">{{link_name|index:i|index:j}}</a>
+        </li>
+        {% endfor %}
+        </ul>
+        {% endfor %}
+    </body>
+</html>

@@ -1,3 +1,4 @@
+{% load index %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -44,16 +45,9 @@
             </div>
           </form>
           <ul class="nav navbar-nav" style="float: right;">
-            <li class="active"><a href="tribal.html"><i class="fa fa-bars"></i> Home</a></li>        
-            <li><a href="aboutus.html"><i class="fa fa-globe"></i> About us</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>  contact
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">by message</a></li>
-                  <li><a href="#">by  call</a></li>
-                </ul>
-            </li>
+            <li class="active"><a href=""><i class="fa fa-bars"></i> Home</a></li>        
+            <li><a href="contactorg"><i class="fa fa-globe"></i> About us</a></li>
+            
             <li><button class="btn btn-danger navbar-btn">Sign out</button></li> 
           </ul>
         </div>
@@ -69,12 +63,12 @@
             <tr>
                 <td style="width:40%;">
                     <p style="width:200%; border: none; line-height:130%;">
-                        Email: {{x.orgemail}}
+                        Name: {{x}}
                     </p>
                 </td>
                 <td>
                     <textarea style="width:90%; border: none; line-height:130%;">
-                    Skills : Painting,Singing,Sketching
+                    Skills :{{skill}}
                     </textarea>
                 </td>
             </tr>

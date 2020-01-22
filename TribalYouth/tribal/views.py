@@ -9,6 +9,9 @@ from django.contrib.auth.models import User, auth
 from . models import TribalUser, TribalSkills,Organisation,Apply_tribal_to_org,Invite_tribal_to_org
 from PIL import Image
 from .forms import Skill_Form
+import requests as r
+from bs4 import BeautifulSoup as bs
+
 
 IMAGE_FILE_TYPES= ['png','jpg','jpeg']
 
@@ -56,6 +59,9 @@ def logout(request):
     return redirect('/')
 
 def index(request):
+    from django.utils import translation
+    if translation.LANGUAGE_SESSION_KEY in request.session:
+        del request.session[translation.LANGUAGE_SESSION_KEY]
     if request.method=='POST':
         email=request.POST.get('email','')
         name=request.POST.get('name','')
@@ -263,7 +269,7 @@ def makeapplication(request):
         org_email=request.POST.get('email','')
         tribalemail=request.user.get_username()
         application=request.POST.get('application','')
-        appl=Apply_tribal_to_org(tribalemail=tribalemail,orgemail=org_email,application=application)
+        appl=Apply_tribal_to_org(tribalemail=tribalemail,orgemail=org_email,application=application,status='requested')
         appl.save()
         skill=getskills(tribalemail)
         first_skill=skill[0]
@@ -296,7 +302,7 @@ def makeinvitation(request):
         tribal_email=request.POST.get('email','')
         orgemail=request.user.get_username()
         application=request.POST.get('application','')
-        appl=Invite_tribal_to_org(tribalemail=tribal_email,orgemail=orgemail,application=application)
+        appl=Invite_tribal_to_org(tribalemail=tribal_email,orgemail=orgemail,application=application,status='requested')
         appl.save()
         triballist=gettribalslist()
         usershow=getuser(triballist)
@@ -306,12 +312,105 @@ def makeinvitation(request):
 def invitation(request):
     email=request.user.get_username()
     myrequest=Invite_tribal_to_org.objects.filter(tribalemail=email)
+    org_name=[]
+    for i in myrequest:
+        ob=Organisation.objects.filter(email=i.orgemail)
+        name=ob[0].org_name
+        org_name.append(name)
 
-    
-    return render(request,'Receivedinvitation.html',{'my':myrequest})
+    return render(request,'Receivedinvitation.html',{'my':org_name})
 
 def myrequests(request):
     email=request.user.get_username()
     myrequest=Apply_tribal_to_org.objects.filter(tribalemail=email)
-    print(myrequest)
-    return render(request,'sentRequest.html',{'my':myrequest})
+    org_name=[]
+    for i in myrequest:
+        ob=Organisation.objects.filter(email=i.orgemail)
+        name=ob[0].org_name
+        org_name.append(name)
+    l=list(range(len(org_name)))
+    print(org_name)
+    s=[]
+    skill=getskills(email)
+    for i in skill:
+        s.append(i.title)
+    print(s)
+    sk=''
+    for x in s:
+        sk=sk+x+','
+    print(sk)
+    sk=sk[0:31] 
+    
+    return render(request,'sentRequest.html',{'my':org_name,'skill':sk})
+
+def scheme(request):
+    url="https://tribal.nic.in/Schemes.aspx"
+    response = r.get(url)
+    soup = bs(response.text, "html.parser")
+
+    main_box = soup.find_all("ul",{"class":"list"})
+
+    scheme_heading = []
+    link_name=[]
+    link_url=[]
+    x={}
+    y={}
+    lister_size_ranger=[]
+    for i in range(1,len(main_box)):
+        scheme_heading.append(main_box[i].find('strong').text)
+        l= main_box[i].find_all('li')
+        
+        data=[]
+        link=[]
+        
+        lister_size_ranger.append(list(range(len(l))))
+        
+        for j in range(len(l)):
+            data.append(l[j].text)
+            link.append('https://tribal.nic.in/'+(l[j].find('a').get('href')))
+            y[l[j].text]='https://tribal.nic.in/'+(l[j].find('a').get('href'))
+        link_name.append(data)
+        link_url.append(link)
+        
+        x[main_box[i].find('strong').text]=link_name[i-1]
+    sizer=len(scheme_heading)
+    print(x)
+    print(lister_size_ranger)
+    return render(request,'schemes.html',{'y':y,'sizer':range(sizer),'lister_size_ranger':lister_size_ranger,'scheme_heading':scheme_heading,'link_name':link_name,'link_url':link_url,'x':x})
+
+
+def viewrequest(request):
+    email=request.user.get_username()
+    view_requests=Apply_tribal_to_org.objects.filter(orgemail=email)
+    tribal_name=[]
+    tribal_skill=[]
+    for i in view_requests:
+        ob=User.objects.filter(username=i.tribalemail)
+        name=ob[0].first_name
+        s=[]
+        skill=getskills(ob[0].username)
+        for i in skill:
+            s.append(i.title)
+        sk=''
+        for x in s:
+            sk=sk+x+','
+        sk=sk[0:31]
+        tribal_skill.append(sk)
+
+        tribal_name.append(name)
+    print(len(tribal_skill))
+    print(len(tribal_name))
+    return render(request,'Receivedrequest.html', {'recieved_requests':tribal_name,'len':list(range(len(tribal_name))),'tribalskill':tribal_skill})
+
+def sendinvitationoforg(request):
+    email=request.user.get_username()
+    view_invitation=Invite_tribal_to_org.objects.filter(orgemail=email)
+    return render(request,'sentInvitations.html', {'view_invitation':view_invitation})
+
+def viewskill(request):
+    email=request.user.get_username()
+    skill=getskills(email)
+    first_skill=skill[0]
+    skill=skill[1:]
+    orglist=getorganizationslist()
+    return render(request,'editskills.html',{'email':email,'skill':skill,'first_skill':first_skill})
