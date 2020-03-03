@@ -1,9 +1,10 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>MyOrgProfile</title>
+    <title>{% trans "MyOrg Profile" %}</title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/orgprofile.css' %}">
 
@@ -33,7 +34,7 @@
     <nav id="navb" class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="font-family: cursive;">AAKRATI</a>
+            <a class="navbar-brand" href="#" style="font-family: cursive;">{% trans "AAKRATI" %}</a>
           </div>
           <form class="navbar-form navbar-left" action="/action_page.py">
             <div class="input-group">
@@ -46,18 +47,15 @@
             </div>
           </form>
           <ul class="nav navbar-nav" style="float: right;">
-            <li class="active"><a href="tribal.html"><i class="fa fa-bars"></i> Home</a></li>           
-            <li><a href="MyProfile.html"><i class="fa fa-edit"></i>  profile</a></li>
-            <li><a href="aboutus.html"><i class="fa fa-globe"></i> About us</a></li>
+            <li class="active"><a href="/"><i class="fa fa-bars"></i>{% trans "Home" %}</a></li>           
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>  contact
-                </a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>{% trans "Contact" %}</a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">by message</a></li>
-                  <li><a href="#">by  call</a></li>
+                  <li><a href="contactorg">{% trans "By message" %}</a></li>
+                  <li><a href="contactorg">{% trans "By call" %}</a></li>
                 </ul>
             </li>
-            <li><button class="btn btn-danger navbar-btn">Sign out</button></li> 
+            <li><a href="/logout"><button class="btn btn-danger navbar-btn">{% trans "Sign Out" %}</button></a></li> 
           </ul>
         </div>
     </nav> 
@@ -68,7 +66,7 @@
    <form action="table.html" method="POST">
     <center>
     <fieldset>
-        <legend style="font-family:cursive"><mark>Your Details:</mark></legend>
+        <legend style="font-family:cursive"><mark>{% trans "Your Details" %}:</mark></legend>
         <div class="upload-btn-wrapper" style="margin-left: 0;">
             <img src="{% static 'images/orglogo2.jpg' %}" alt="not found">
                 <button class="addbtn">+</button>
@@ -79,20 +77,24 @@
 
         <table >
           <tr>
-            <td><b style="font-family:cursive;">Name: </b></td>
-            <td><input type="text" value="Harshada"><br></td>
+            <td><b style="font-family:cursive;">{% trans "Name" %}: </b></td>
+            <td><input type="text" value="{{orgdetail.first_name}}"><br></td>
           </tr>
           <tr>
-            <td><b style="font-family:cursive;">Phone: </b></td>
-            <td><input type="text" value="93745969674"><br></td>
+            <td><b style="font-family:cursive;">{% trans "Phone" %}: </b></td>
+            <td><input type="text" value="{{orgmoredetail.mobile}}"><br></td>
           </tr>
           <tr>
-            <td> <b style="font-family:cursive;">Email: </b></td>
-            <td><input type="text" value="h@gmail.com"><br></td>
+            <td> <b style="font-family:cursive;">{% trans "Email" %}: </b></td>
+            <td><input type="text" value="{{orgdetail.username}}"><br></td>
           </tr>
           <tr>
-              <td><b style="font-family:cursive;">Organisation Type:</b></td>
-              <td><input type="text" value="NGO"><br></td>
+            <td> <b style="font-family:cursive;">{% trans "City" %}: </b></td>
+            <td><input type="text" value="{{orgmoredetail.city}}"><br></td>
+          </tr>
+          <tr>
+              <td><b style="font-family:cursive;">{% trans "Organization Type" %}:</b></td>
+              <td><input type="text" value="{{orgmoredetail.typeorg}}"><br></td>
           </tr>
         </table >
     </fieldset>

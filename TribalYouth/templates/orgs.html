@@ -1,8 +1,9 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>  Organisation Page</title> 
+        <title>{% trans "Organization Page" %}</title> 
         <link href="{% static 'css/org.css' %}" rel="stylesheet" type="text/css">
         
 
@@ -34,7 +35,7 @@
     <nav id="navb" class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="#" style="font-family: cursive;">AAKRATI</a>
+                <a class="navbar-brand" href="#" style="font-family: cursive;">{% trans "AAKRATI" %}</a>
               </div>
               <form class="navbar-form navbar-left" action="/action_page.py">
                 <div class="input-group">
@@ -47,21 +48,21 @@
                 </div>
               </form>
               <ul class="nav navbar-nav" style="float: right;">
-                <li class="active"><a href="orgs.html"><i class="fa fa-bars"></i> Home</a></li>
-                <li><a href="#tribes"><i class="fa fa-ravelry" aria-hidden="true"></i> Tribes</a></li>
-                <li><a href="viewrequest"><i class="fa fa-edit"></i> View Request</a></li>
-                <li><a href="sendinvitationoforg"><i class="fa fa-edit"></i> Sent Invitation</a></li>
-                <li><a href="orgProfile"><i class="fa fa-edit"></i> profile</a></li>
-                <li><a href="contactorg"><i class="fa fa-globe"></i> contact us</a></li>
+                <li class="active"><a href="orgs.html"><i class="fa fa-bars"></i>{% trans "Home" %}</a></li>
+                <li><a href="#tribes"><i class="fa fa-ravelry" aria-hidden="true"></i>{% trans "Tribes" %}</a></li>
+                <li><a href="viewrequest"><i class="fa fa-edit"></i>{% trans "View Request" %}</a></li>
+                <li><a href="sendinvitationoforg"><i class="fa fa-edit"></i> {% trans "Sent Invitation" %}</a></li>
+                <li><a href="orgProfile"><i class="fa fa-edit"></i>{% trans "Profile" %}</a></li>
+                <li><a href="contactorg"><i class="fa fa-globe"></i>{% trans "Contact Us" %}</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>  contact
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a href="#">by message</a></li>
-                      <li><a href="#">by  call</a></li>
+                      <li><a href="contactorg">{% trans "By message" %}</a></li>
+                      <li><a href="contactorg">{% trans "By call" %}</a></li>
                     </ul>
                 </li>
-                <li><a href="/logout" class="btn btn-danger" style="color: white; padding: 5px;margin-top: 8px;"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a></li>
+                <li><a href="/logout" class="btn btn-danger" style="color: white; padding: 5px;margin-top: 8px;"><i class="fa fa-sign-out" aria-hidden="true"></i>{% trans "LogOut" %}</a></li>
               </ul>
             </div>
     </nav> 
@@ -80,7 +81,7 @@
             <div class="row text-center">
                 <div class="title">
                     
-                <h2><b>People with relative Skills</b></h2>
+                <h2><b>{% trans "People with relative Skills" %}</b></h2>
                  <div class="sub-heading">
                      <p></p>
                  </div>
@@ -98,26 +99,18 @@
                      <p><img src="{% static 'images/vases.jpg' %}" alt="Pineapple" >
                       <table style="height:fit-content;color: black;font-family: cursive;">
                         <tr>
-                          <td><b>Name:</b></td>
+                          <td><b>{% trans "Name" %}:</b></td>
                           <td>{{x.first_name}}</td>
                         </tr>
                         <tr>
-                          <td><b>Email:</b></td>
+                          <td><b>{% trans "Email" %}:</b></td>
                           <td>{{x.username}}</td>
                         </tr>
+                        
                         <tr>
-                          <td><b>Skills: </b></td>
-                          <td>
-                            <ul>
-                              <li>PAINTING</li>
-                              <li>SPORT</li>
-                            </ul>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><button class="btn btn-primary">View Profile</button></td>
-                          
-                           <a href="/invite/{{x.id}}" ><button type="submit" class="btn btn-warning">Invite</button></a>
+                          <td><a href="/viewprofileTribal/{{x.username}}"><button class="btn btn-primary">{% trans "View Profile" %}</button></a></td>
+                           <td>                           
+                           <a href="/invite/{{x.id}}/{{x.username}}" ><button type="submit" class="btn btn-warning">{% trans "Invite" %}</button></a>
                           </td>
                         </tr>
                       </table>
@@ -163,7 +156,7 @@
                     </div>
                     <div class="sub-heading"><br>
                         <p1>
-                           Give us an opportunity to serve you once,<br> we are sure you'll love to come back to us again and be our esteemed customer forever.<br><br>
+                           {% trans "Give us an opportunity to serve you once" %},<br> {% trans "we are sure you'll love to come back to us again and be our esteemed customer forever." %}<br><br>
                         </p1>
                         <div class="sub-heading"></div>
                     </div>
@@ -173,7 +166,7 @@
          </div> 
 
          <div class="last text-center">
-             &copy;<b>Tribals Platform AAKRATI-2020, RESERVED</b>
+             &copy;<b>{% trans "Tribal Platform AAKRATI-2020, RESERVED" %}</b>
          </div>
                      
     </footer>

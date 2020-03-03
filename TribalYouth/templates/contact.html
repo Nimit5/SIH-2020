@@ -1,11 +1,12 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 
 
 
 <head>
-    <title>Contact Aakrati</title>
+    <title>{% trans "Contact Aakrati" %}</title>
     <link href="{% static 'css/contact.css' %}" rel="stylesheet" type="text/css">
     
         <!-- FOnt Awesome Icon -->
@@ -33,7 +34,7 @@
    <nav id="navb" class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#" style="font-family: cursive;">AAKRATI</a>
+        <a class="navbar-brand" href="#" style="font-family: cursive;">{% trans "AAKRATI"%}</a>
       </div>
       <form class="navbar-form navbar-left" action="/action_page.py">
         <div class="input-group">
@@ -46,10 +47,10 @@
         </div>
       </form>
       <ul class="nav navbar-nav" style="float: right;">
-        <li class="active"><a href="index.html"><i class="fa fa-bars"></i> Home</a></li>
-        <li><a href="aboutus.html"><i class="fa fa-globe"></i> About us</a></li>
+        <li class="active"><a href="/"><i class="fa fa-bars"></i>{% trans "Home" %} </a></li>
+        <li><a href=""><i class="fa fa-globe"></i>{% trans "About us"%} </a></li>
         <li><a href="https://tribal.nic.in/"><i class="fas fa-rupee-sign"></i>जनजातीय कार्य मंत्रालय</a></li>
-        <li><button class="btn btn-danger navbar-btn">Sign out</button></li> 
+        <li><a href="/logout"><button class="btn btn-danger navbar-btn">{% trans "Sign out"%}</button></a></li> 
       </ul>
     </div>
 </nav> 
@@ -66,10 +67,10 @@
         
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h2><b>CONTACT US</b></h2>
+                <h2><b>{% trans "CONTACT US"%}</b></h2>
                 <div class="sub-heading">
                     <p>
-                        Hii...! NAMASTE...!We are here to help you.<br><b>जनजातीय कार्य मंत्रालय</b>   
+                        {% trans "Hii...! NAMASTE...!We are here to help you" %}.<br><b>जनजातीय कार्य मंत्रालय</b>   
                     </p>
                 </div>
             </div>
@@ -78,16 +79,16 @@
     <div class="row">    
           
         <div class="col-sm-3 divider">
-           <h3>contact</h3>
+           <h3>{% trans "Contact" %}</h3>
            <div class="contact-address">
                <ul>
   
                    <li>
                        <i class="fa fa-home"></i>
                        <div class="address-phone">
-                           <p> </p><h4> Address</h4>
-                           <span>AAkrati Foundation ,Ministry of tribal affairs, Plot No. 25/18, Lane-110016</span>
-                           <span>New Delhi(DL), INDIA</span>
+                           <p> </p><h4>{% trans "Address" %} </h4>
+                           <span>{% trans "Aakrati Foundation ,Ministry of tribal affairs, Plot No. 25/18, Lane-110016" %}</span>
+                           <span>{% trans "New Delhi(DL), INDIA" %}</span>
                        </div>    
                    </li>
   
@@ -95,7 +96,7 @@
                    <li>
                        <i class="fa fa-phone"></i>
                        <div class="address-phone">
-                       <p> </p><h4> Phone</h4>
+                       <p> </p><h4>{% trans "Phone" %} </h4>
                        <span>+(91)-9407401065</span>
                        </div>    
                    </li>
@@ -104,7 +105,7 @@
                    <li>
                        <i class="fa fa-plane"></i>
                        <div class="address-phone">
-                       <h4> Email</h4>
+                       <h4>{% trans "Email" %} </h4>
                        <span>aakrati.foundation2020@gmail.com</span>
                        </div>    
                    </li>
@@ -116,7 +117,7 @@
         
         <div class="col-sm-9">
             <div class="contact-block">
-                <h3>Drop a Message</h3>
+                <h3>{% trans "Drop a Message" %}</h3>
                 <form class="contact_form">
                     <div class="row">
                         <div class="col-sm-6">
@@ -176,7 +177,7 @@
                       </div>
                       <div class="sub-heading"><br>
                           <p1>
-                             Give us an opportunity to serve you once,<br> we are sure you'll love to come back to us again and be our esteemed customer forever.<br><br>
+                            {% trans "Give us an opportunity to serve you once" %},<br> {% trans "we are sure you'll love to come back to us again and be our esteemed customer forever" %}.<br><br>
                           </p1>
                           <div class="sub-heading"></div>
                       </div>

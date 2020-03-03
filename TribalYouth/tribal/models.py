@@ -4,8 +4,9 @@ from django.db import models
 class TribalUser(models.Model):
     email=models.CharField(max_length=80)
     type_user=models.CharField(max_length=60)
-    mobile=models.IntegerField()
+    mobile=models.CharField(max_length=10,default=' ')
     category=models.CharField(max_length=10)
+    city=models.CharField(max_length=50,default=' ')
 
     def __str__(self):
         return self.email
@@ -13,9 +14,10 @@ class TribalUser(models.Model):
 class Organisation(models.Model):
     email=models.CharField(max_length=50, default=' ')
     desc=models.CharField(max_length=600,default=' ')
-    mobile=models.IntegerField(max_length=10)
+    mobile=models.CharField(max_length=10,default=' ')
     org_name=models.CharField(max_length=100, default=' ')
-
+    typeorg=models.CharField(max_length=50,default='')
+    city=models.CharField(max_length=50,default=' ')
     def __str__(self):
         return self.email
 

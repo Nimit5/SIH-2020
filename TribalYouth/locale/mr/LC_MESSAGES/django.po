@@ -1,0 +1,514 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-23 10:23-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\MyProfile.html:7
+msgid "My Profile"
+msgstr "माझे प्रोफाइल"
+
+#: .\templates\MyProfile.html:37 .\templates\Receivedinvitation.html:36
+#: .\templates\Receivedrequest.html:35 .\templates\applistatus.html:40
+#: .\templates\apply.html:34 .\templates\contact.html:37
+#: .\templates\editskills.html:34 .\templates\invite.html:34
+#: .\templates\orgProfile.html:37 .\templates\orgs.html:38
+#: .\templates\schemes.html:35 .\templates\sentInvitations.html:35
+#: .\templates\sentRequest.html:36 .\templates\tribal.html:37
+#: .\templates\viewitemdetails.html:30
+msgid "AAKRATI"
+msgstr "आक्रती"
+
+#: .\templates\MyProfile.html:50 .\templates\Receivedinvitation.html:49
+#: .\templates\Receivedrequest.html:48 .\templates\applistatus.html:53
+#: .\templates\apply.html:47 .\templates\contact.html:50
+#: .\templates\editskills.html:47 .\templates\index.html:77
+#: .\templates\indexotp.html:58 .\templates\invite.html:47
+#: .\templates\orgProfile.html:50 .\templates\orgs.html:51
+#: .\templates\schemes.html:48 .\templates\sentInvitations.html:48
+#: .\templates\sentRequest.html:49 .\templates\tribal.html:50
+#: .\templates\viewitemdetails.html:43
+msgid "Home"
+msgstr "मुख्यपृष्ठ"
+
+#: .\templates\MyProfile.html:54 .\templates\contact.html:82
+#: .\templates\index.html:55 .\templates\indexotp.html:39
+#: .\templates\invite.html:51 .\templates\orgProfile.html:52
+msgid "Contact"
+msgstr "संपर्क"
+
+#: .\templates\MyProfile.html:57 .\templates\invite.html:54
+#: .\templates\orgProfile.html:54 .\templates\orgs.html:61
+msgid "By message"
+msgstr "संदेशाद्वारे"
+
+#: .\templates\MyProfile.html:58 .\templates\invite.html:55
+#: .\templates\orgProfile.html:55 .\templates\orgs.html:62
+msgid "By call"
+msgstr "कॉल करून"
+
+#: .\templates\MyProfile.html:61 .\templates\invite.html:58
+#: .\templates\orgProfile.html:58
+msgid "Sign Out"
+msgstr "साइन आउट"
+
+#: .\templates\MyProfile.html:71 .\templates\invite.html:74
+#: .\templates\orgProfile.html:69
+msgid "Your Details"
+msgstr "तुमचा तपशील"
+
+#: .\templates\MyProfile.html:82 .\templates\Receivedrequest.html:73
+#: .\templates\applistatus.html:71 .\templates\apply.html:81
+#: .\templates\index.html:201 .\templates\index.html:219
+#: .\templates\invite.html:83 .\templates\orgProfile.html:80
+#: .\templates\orgs.html:102 .\templates\sentRequest.html:67
+msgid "Name"
+msgstr ""
+
+#: .\templates\MyProfile.html:86 .\templates\applistatus.html:79
+#: .\templates\apply.html:85 .\templates\contact.html:99
+#: .\templates\invite.html:87 .\templates\orgProfile.html:84
+msgid "Phone"
+msgstr "फोन"
+
+#: .\templates\MyProfile.html:90 .\templates\applistatus.html:87
+#: .\templates\apply.html:89 .\templates\contact.html:108
+#: .\templates\index.html:160 .\templates\index.html:203
+#: .\templates\index.html:221 .\templates\invite.html:91
+#: .\templates\orgProfile.html:88 .\templates\orgs.html:106
+#: .\templates\sentInvitations.html:66 .\templates\tribal.html:104
+msgid "Email"
+msgstr "ईमेल"
+
+#: .\templates\MyProfile.html:94 .\templates\applistatus.html:95
+#: .\templates\apply.html:93 .\templates\invite.html:95
+msgid "City/Village"
+msgstr "शहर / गाव"
+
+#: .\templates\MyProfile.html:98 .\templates\applistatus.html:103
+#: .\templates\apply.html:97 .\templates\index.html:206
+#: .\templates\invite.html:99
+msgid "Category"
+msgstr "वर्ग"
+
+#: .\templates\MyProfile.html:102 .\templates\applistatus.html:111
+msgid "Existing Skills"
+msgstr "विद्यमान कौशल्ये"
+
+#: .\templates\MyProfile.html:112
+msgid "Update"
+msgstr "अद्यतनित करा"
+
+#: .\templates\Receivedinvitation.html:8 .\templates\sentInvitations.html:7
+msgid "Invitations from Orgs"
+msgstr "संस्थेचे निमंत्रण"
+
+#: .\templates\Receivedinvitation.html:50 .\templates\Receivedrequest.html:49
+#: .\templates\contact.html:51 .\templates\index.html:64
+#: .\templates\indexotp.html:48 .\templates\sentInvitations.html:49
+#: .\templates\sentRequest.html:50
+msgid "About us"
+msgstr "आमच्याबद्दल"
+
+#: .\templates\Receivedinvitation.html:52 .\templates\Receivedrequest.html:51
+#: .\templates\apply.html:56 .\templates\contact.html:53
+#: .\templates\sentInvitations.html:51 .\templates\sentRequest.html:52
+msgid "Sign out"
+msgstr "साइन आउट करा"
+
+#: .\templates\Receivedrequest.html:7 .\templates\sentRequest.html:8
+msgid "Requests from tribals"
+msgstr "आदिवासींकडून विनंत्या"
+
+#: .\templates\Receivedrequest.html:78 .\templates\apply.html:101
+#: .\templates\invite.html:103
+msgid "Skills"
+msgstr "कौशल्य"
+
+#: .\templates\Receivedrequest.html:81 .\templates\sentInvitations.html:71
+#: .\templates\sentRequest.html:72
+msgid "Status"
+msgstr "स्थिती"
+
+#: .\templates\applistatus.html:8 .\templates\editskills.html:7
+#: .\templates\viewitemdetails.html:6
+msgid "Image Details"
+msgstr "प्रतिमा तपशील"
+
+#: .\templates\applistatus.html:54 .\templates\editskills.html:48
+#: .\templates\schemes.html:49 .\templates\viewitemdetails.html:44
+msgid "Back"
+msgstr "मागे"
+
+#: .\templates\applistatus.html:64
+msgid "Tribal Details"
+msgstr "जमाती तपशील"
+
+#: .\templates\applistatus.html:123
+msgid "Organisation Details"
+msgstr "संस्थेचा तपशील"
+
+#: .\templates\applistatus.html:149
+msgid "Check-Status"
+msgstr "चेक-स्टेटस"
+
+#: .\templates\apply.html:7 .\templates\invite.html:7
+msgid "Apply"
+msgstr "अर्ज करा"
+
+#: .\templates\apply.html:49 .\templates\tribal.html:59
+msgid "contact"
+msgstr "संपर्क"
+
+#: .\templates\apply.html:52 .\templates\index.html:57
+#: .\templates\indexotp.html:41 .\templates\tribal.html:61
+msgid "by message"
+msgstr "संदेशाद्वारे"
+
+#: .\templates\apply.html:53 .\templates\tribal.html:62
+msgid "by  call"
+msgstr "कॉल करून"
+
+#: .\templates\apply.html:72
+msgid "Your Details:"
+msgstr "तुमचा तपशील:"
+
+#: .\templates\apply.html:125 .\templates\invite.html:127
+msgid "Application"
+msgstr "विनंती"
+
+#: .\templates\contact.html:9
+msgid "Contact Aakrati"
+msgstr "आक्रतीशी संपर्क साधा"
+
+#: .\templates\contact.html:70
+msgid "CONTACT US"
+msgstr "आमच्याशी संपर्क साधा"
+
+#: .\templates\contact.html:73
+msgid "Hii...! NAMASTE...!We are here to help you"
+msgstr "हाय ...! नमस्ते ...! आम्ही तुमच्या मदतीसाठी इथे आहोत"
+
+#: .\templates\contact.html:89
+msgid "Address"
+msgstr "पत्ता"
+
+#: .\templates\contact.html:90
+msgid ""
+"Aakrati Foundation ,Ministry of tribal affairs, Plot No. 25/18, Lane-110016"
+msgstr "आक्रती फाउंडेशन, आदिवासी व्यवहार मंत्रालय, प्लॉट क्रमांक 25/18, लेन -110016"
+
+#: .\templates\contact.html:91
+msgid "New Delhi(DL), INDIA"
+msgstr "नवी दिल्ली (डीएल), भारत"
+
+#: .\templates\contact.html:120
+msgid "Drop a Message"
+msgstr "संदेश ड्रॉप करा"
+
+#: .\templates\contact.html:180 .\templates\orgs.html:159
+#: .\templates\schemes.html:113 .\templates\tribal.html:143
+msgid "Give us an opportunity to serve you once"
+msgstr "एकदा आम्हाला तुमची सेवा करण्याची संधी द्या"
+
+#: .\templates\contact.html:180 .\templates\schemes.html:113
+#: .\templates\tribal.html:143
+msgid ""
+"we are sure you'll love to come back to us again and be our esteemed "
+"customer forever"
+msgstr ""
+"आम्हाला खात्री आहे की आपण परत आमच्याकडे परत येऊ आणि आमच्यासाठी कायमचा आदरणीय ग्राहक "
+"व्हाल"
+
+#: .\templates\editskills.html:57
+msgid "Upload Artwork"
+msgstr "कलाकृती अपलोड करा"
+
+#: .\templates\editskills.html:65
+msgid "Select files"
+msgstr "फायली निवडा"
+
+#: .\templates\editskills.html:66 .\templates\viewitemdetails.html:61
+msgid "Title"
+msgstr "शीर्षक"
+
+#: .\templates\editskills.html:67 .\templates\viewitemdetails.html:65
+msgid "Caption"
+msgstr "मथळा"
+
+#: .\templates\editskills.html:70
+msgid "Upload"
+msgstr "अपलोड करा"
+
+#: .\templates\editskills.html:78
+msgid "Your Work"
+msgstr "आपले कार्य"
+
+#: .\templates\editskills.html:91 .\templates\editskills.html:99
+#: .\templates\editskills.html:106
+msgid "Download"
+msgstr "डाउनलोड करा"
+
+#: .\templates\editskills.html:92 .\templates\editskills.html:100
+#: .\templates\editskills.html:107
+msgid "View Details"
+msgstr "तपशील पहा"
+
+#: .\templates\editskills.html:117
+msgid "Previous"
+msgstr "मागील"
+
+#: .\templates\editskills.html:121
+msgid "Next"
+msgstr "पुढे"
+
+#: .\templates\index.html:7 .\templates\indexotp.html:7
+msgid "Home Page"
+msgstr "मुख्यपृष्ठ"
+
+#: .\templates\index.html:58 .\templates\indexotp.html:42
+msgid "by call"
+msgstr "कॉल करून"
+
+#: .\templates\index.html:69 .\templates\index.html:192
+#: .\templates\indexotp.html:53
+msgid "Register"
+msgstr "नोंदणी करा"
+
+#: .\templates\index.html:72
+msgid "Store"
+msgstr "स्टोअर"
+
+#: .\templates\index.html:89 .\templates\index.html:105
+#: .\templates\index.html:120
+msgid ""
+"Our commitment is to always try to master the art of exemplary services & "
+"experience"
+msgstr "आमची वचनबद्धता नेहमी अनुकरणीय सेवांच्या कलेवर प्रभुत्व मिळविण्याचा प्रयत्न करणे आहे"
+
+#: .\templates\index.html:97 .\templates\index.html:113
+#: .\templates\index.html:128
+msgid "Login Here"
+msgstr "येथे लॉगिन करा"
+
+#: .\templates\index.html:148 .\templates\index.html:157
+msgid "Login"
+msgstr "लॉगिन"
+
+#: .\templates\index.html:149
+msgid "SignUp"
+msgstr "साइन अप करा"
+
+#: .\templates\index.html:161 .\templates\index.html:204
+#: .\templates\index.html:222
+msgid "Password"
+msgstr "पासवर्ड"
+
+#: .\templates\index.html:165
+msgid "Login Failed!!! ,invalid username password"
+msgstr "लॉगिन अयशस्वी !!! , अवैध वापरकर्तानाव संकेतशब्द"
+
+#: .\templates\index.html:185
+msgid "Tribal Youth"
+msgstr "जमाती युवा"
+
+#: .\templates\index.html:186
+msgid "Professional"
+msgstr "व्यावसायिक"
+
+#: .\templates\index.html:202 .\templates\index.html:220
+msgid "Mobile"
+msgstr "मोबाईल"
+
+#: .\templates\index.html:205 .\templates\index.html:223
+msgid "Confirm Password"
+msgstr "पासवर्ड  पुष्टी"
+
+#: .\templates\index.html:224
+msgid "Organization"
+msgstr "संस्था"
+
+#: .\templates\indexotp.html:105
+msgid "Enter your OTP here"
+msgstr "आपला ओटीपी येथे प्रविष्ट करा"
+
+#: .\templates\indexotp.html:106
+msgid "OTP is send to your Email ,please verify Your OTP"
+msgstr "ओटीपी आपल्या ईमेलवर पाठविला आहे, कृपया आपला ओटीपी सत्यापित करा"
+
+#: .\templates\indexotp.html:115
+msgid "OTP not match"
+msgstr "ओटीपी जुळत नाही"
+
+#: .\templates\orgProfile.html:7
+msgid "MyOrg Profile"
+msgstr "माझ्या संस्थेचे प्रोफाइल"
+
+#: .\templates\orgProfile.html:92
+msgid "City"
+msgstr ""
+
+#: .\templates\orgProfile.html:96
+msgid "Organization Type"
+msgstr "संस्थेचा प्रकार"
+
+#: .\templates\orgs.html:6
+msgid "Organization Page"
+msgstr "संस्था पृष्ठ"
+
+#: .\templates\orgs.html:52
+msgid "Tribes"
+msgstr "जमाती"
+
+#: .\templates\orgs.html:53
+msgid "View Request"
+msgstr "विनंत्या पहा"
+
+#: .\templates\orgs.html:54
+msgid "Sent Invitation"
+msgstr "आमंत्रणे पाठविली"
+
+#: .\templates\orgs.html:55 .\templates\tribal.html:56
+msgid "Profile"
+msgstr "प्रोफाइल"
+
+#: .\templates\orgs.html:56
+msgid "Contact Us"
+msgstr "आमच्याशी संपर्क साधा"
+
+#: .\templates\orgs.html:65 .\templates\tribal.html:65
+msgid "LogOut"
+msgstr "लॉग आऊट"
+
+#: .\templates\orgs.html:84
+msgid "People with relative Skills"
+msgstr "संबंधित कौशल्ये असलेले लोक"
+
+#: .\templates\orgs.html:111
+msgid "View Profile"
+msgstr "प्रोफाइल पहा"
+
+#: .\templates\orgs.html:113
+msgid "Invite"
+msgstr "आमंत्रित करा"
+
+#: .\templates\orgs.html:159
+msgid ""
+"we are sure you'll love to come back to us again and be our esteemed "
+"customer forever."
+msgstr ""
+"आम्हाला खात्री आहे की आपण परत आमच्याकडे परत येऊ आणि आमच्यासाठी कायमचा आदरणीय ग्राहक "
+"व्हाल"
+
+#: .\templates\orgs.html:169
+msgid "Tribal Platform AAKRATI-2020, RESERVED"
+msgstr "जमाती प्लॅटफॉर्म AAKRATI-2020, RESERVED"
+
+#: .\templates\schemes.html:7 .\templates\schemes.html:64
+#: .\templates\tribal.html:57
+msgid "Schemes"
+msgstr "योजना"
+
+#: .\templates\schemes.html:64
+msgid "Explore and get Benefited"
+msgstr "अन्वेषण करा आणि लाभ घ्या"
+
+#: .\templates\schemes.html:66
+msgid ""
+"Schemes launched by Ministry of Tribal Affairs for the welfare of Scheduled "
+"Tribes"
+msgstr "आदिवासी कार्य मंत्रालयाने अनुसूचित जमातींच्या कल्याणासाठी सुरू केलेल्या योजना"
+
+#: .\templates\schemes.html:109
+msgid "For refrence"
+msgstr "संदर्भासाठी"
+
+#: .\templates\schemes.html:109
+msgid "Click Here"
+msgstr "इथे क्लिक करा"
+
+#: .\templates\schemes.html:124 .\templates\tribal.html:153
+msgid "Tribals Platform AAKRATI-2020, RESERVED"
+msgstr "जमाती प्लॅटफॉर्म AAKRATI-2020, RESERVED"
+
+#: .\templates\tribal.html:6
+msgid "Tribal Page"
+msgstr "टोळी पृष्ठ"
+
+#: .\templates\tribal.html:52
+msgid "My skills"
+msgstr "माझी कौशल्यं"
+
+#: .\templates\tribal.html:53 .\templates\tribal.html:88
+msgid "Organisation"
+msgstr "संस्था"
+
+#: .\templates\tribal.html:54
+msgid "My Requests"
+msgstr "माझ्या विनंत्या"
+
+#: .\templates\tribal.html:55
+msgid "Invitations"
+msgstr "आमंत्रणे"
+
+#: .\templates\tribal.html:90
+msgid "Organisations who can provide you jobs and endorse your skills"
+msgstr "आपल्याला नोकर्‍या प्रदान करू शकतील अशा आणि आपल्या कौशल्यांचे समर्थन करणार्‍या संस्था"
+
+#: .\templates\tribal.html:107
+msgid "View More"
+msgstr "अधिक तपशील"
+
+#: .\templates\viewitemdetails.html:52
+msgid "Images Details"
+msgstr "अधिक तपशील पहा"
+
+#~ msgid "Add Skills"
+#~ msgstr "कौशल्य जोडा"
+
+#~ msgid "Dance"
+#~ msgstr "नृत्य"
+
+#~ msgid "Painting"
+#~ msgstr "चित्रकला"
+
+#~ msgid "Singing"
+#~ msgstr "गाणे"
+
+#~ msgid "Hand-craft"
+#~ msgstr "हस्तकला"
+
+#~ msgid "Pottery"
+#~ msgstr "कुंभारकाम"
+
+#~ msgid "Other"
+#~ msgstr "अन्यथा"
+
+#~ msgid "profile"
+#~ msgstr "प्रोफाइल"
+
+#~ msgid "About Us"
+#~ msgstr "आमच्याबद्दल"
+
+#~ msgid "Sports"
+#~ msgstr "खेळ"
+
+#~ msgid "Work Title"
+#~ msgstr "कामाचे शीर्षक"
+
+#~ msgid "Work Caption"
+#~ msgstr "कार्य मथळा"

@@ -131,7 +131,7 @@ STATICFILES_DIRS= [
     os.path.join('static')
 ]
 
-LANGUAGES=[('en','English'),('hi','Hindi')]
+LANGUAGES=[('en','English'),('hi','Hindi'),('mr','Marathi')]
 STATIC_ROOT= os.path.join('assets')
 
 LOCALE_PATHS=[

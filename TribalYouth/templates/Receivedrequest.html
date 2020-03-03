@@ -1,9 +1,10 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>
-            Requests from tribals
+          {% trans "Requests from tribals" %}
         </title>
         <link href="{% static 'css/request.css' %}" rel="stylesheet" type="text/css">
         
@@ -31,7 +32,7 @@
     <nav id="navb" class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="font-family: cursive;">AAKRATI</a>
+            <a class="navbar-brand" href="#" style="font-family: cursive;">{% trans "AAKRATI" %}</a>
           </div>
           <form class="navbar-form navbar-left" action="/action_page.py">
             <div class="input-group">
@@ -44,10 +45,10 @@
             </div>
           </form>
           <ul class="nav navbar-nav" style="float: right;">
-            <li class="active"><a href="/"><i class="fa fa-bars"></i> Home</a></li>        
-            <li><a href="contactorg"><i class="fa fa-globe"></i> About us</a></li>
+            <li class="active"><a href="/"><i class="fa fa-bars"></i>{% trans "Home" %} </a></li>        
+            <li><a href="contactorg"><i class="fa fa-globe"></i>{% trans "About us" %} </a></li>
             
-            <li><button class="btn btn-danger navbar-btn">Sign out</button></li> 
+            <li><button class="btn btn-danger navbar-btn">{% trans "Sign out" %}</button></li> 
           </ul>
         </div>
     </nav> 
@@ -58,21 +59,27 @@
 {% load index %}
      {% for i in len %}
     <div class="requests">
-        <button class="btn btn-danger" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Reject</button> 
-        <button class="btn btn-success" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Accept</button> 
-        <button class="btn btn-primary" style="float:right; width:10%; font-size:120%; margin:0.7%;"> View Profile</button>
+
+      {% if status|index:i == 'requested' %}
+      <a href="/rejectinvitationorg/{{id|index:i}}"> <button class="btn btn-danger" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Reject</button> </a>
+      <a href="/acceptinvitationorg/{{id|index:i}}">  <button class="btn btn-success" style="float:right; width:8%; font-size:120%; margin:0.7%;"> Accept</button> </a>
+      {% endif %} 
+      <a href="/viewprofileTribal/{{email|index:i}}"> <button class="btn btn-primary" style="float:right; width:10%; font-size:120%; margin:0.7%;"> View Profile</button></a>
         <table id="req_content" >
             <tr>
                 
                 <td style="width:40%;">
                     <p style="width:120%; border: none; line-height:130%;">
-                        Name: {{recieved_requests|index:i}} 
+                      {% trans "Name" %}  : {{recieved_requests|index:i}} 
                     </p>
                 </td>
                 <td>
-                    <textarea style="width:90%; border: none; line-height:130%;">
-                    Skills : {{tribalskill|index:i}}
-                    </textarea>
+                    <p style="width:90%; border: none; line-height:130%;">
+                      {% trans "Skills" %}  : {{tribalskill|index:i}}
+                    </p>
+                    <p style="width:90%; border: none; line-height:130%;">
+                      {% trans "Status" %} : {{status|index:i}}
+                      </p>
                 </td>
             </tr>
         </table>

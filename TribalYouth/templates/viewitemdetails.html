@@ -1,7 +1,9 @@
+{% load i18n %}
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Image Details</title>
+        <title>{% trans "Image Details" %}</title>
         
         <!-- FOnt Awesome Icon -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
@@ -14,7 +16,7 @@
 <script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
-   <script src="js/caroufredsel.js"></script>
+   <script src="{% static 'js/caroufredsel.js' %}"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
@@ -25,7 +27,7 @@
        <nav id="navb" class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="font-family: cursive;">AAKRATI</a>
+            <a class="navbar-brand" href="#" style="font-family: cursive;">{% trans "AAKRATI" %}</a>
           </div>
           <form class="navbar-form navbar-left" action="/action_page.py">
             <div class="input-group">
@@ -38,8 +40,8 @@
             </div>
           </form>
           <ul class="nav navbar-nav" style="float: right;">
-            <li class="active"><a href="tribal.html"><i class="fa fa-bars"></i> Home</a></li>
-            <li><button class="btn btn-danger navbar-btn" onclick="window.history.back()">Back</button></li> 
+            <li class="active"><a href="/"><i class="fa fa-bars"></i> {% trans "Home" %}</a></li>
+            <li><button class="btn btn-danger navbar-btn" onclick="window.history.back()">{% trans "Back" %}</button></li> 
           </ul>
         </div>
        </nav> 
@@ -47,21 +49,21 @@
          <!-- navigation is here closed -->
 
        
-            <h2 style="text-align: center;"><b style="font-family: cursive;color: green;">Images Details</b></h2>
+            <h2 style="text-align: center;"><b style="font-family: cursive;color: green;">{% trans "Images Details" %}</b></h2>
             <center>
                 <section>
 
-                    <img src="images/bootleshandloom.png" style="border: 2px solid black; border-radius: 3%;box-shadow: 2PX 2PX 3PX 3px;" >
+                    <img src="{{skill_detail.img.url}}" style="border: 2px solid black; border-radius: 3%;box-shadow: 2PX 2PX 3PX 3px;" >
                 <div >
         
                     <table style=" margin-top: 40px;font-size: x-large;">
                         <tr >
-                            <th>Title :</th>
-                            <td>Work Title</td>
+                            <th>{% trans "Title" %} : </th>
+                            <td>{{skill_detail.title}}</td>
                         </tr>
                         <tr>
-                            <th>Caption:</th>
-                            <td>Work Caption</td>
+                            <th>{% trans "Caption" %} : </th>
+                            <td>{{skill_detail.desc}}</td>
                         </tr>
                     </table>
         

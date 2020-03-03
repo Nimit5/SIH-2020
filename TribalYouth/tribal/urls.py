@@ -19,7 +19,7 @@ urlpatterns = [
     path('orgProfile', views.orgProfile,name="orgProfile"),
     path('contactorg', views.contactorg,name="contactorg"),
     path('makeapplication', views.makeapplication,name="makeapplication"),
-    path('invite/<int:myid>', views.invite,name="invite"),
+    path('invite/<int:myid>/<str:myemail>', views.invite,name="invite"),
     path('makeinvitation', views.makeinvitation,name="makeinvitation"),
     path('myrequests', views.myrequests,name="myrequests"),
     path('invitations', views.invitation,name="invitation"),
@@ -27,6 +27,12 @@ urlpatterns = [
     path('viewrequest', views.viewrequest,name="viewrequest"),
     path('sendinvitationoforg', views.sendinvitationoforg,name="sendinvitationoforg"),
     path('viewskill', views.viewskill,name="viewskill"),
+    path('rejectinvitation/<int:myid>',views.rejectinvitation,name="rejectinvitaion"),
+    path('acceptinvitation/<int:myid>',views.acceptinvitation,name="acceptinvitaion"),
+    path('rejectinvitationorg/<int:myid>',views.rejectinvitationorg,name="rejectinvitaionorg"),
+    path('acceptinvitationorg/<int:myid>',views.acceptinvitationorg,name="acceptinvitaionorg"),
+    path('viewprofileTribal/<str:myemail>',views.viewprofileTribal,name="viewprofileTribal"),
+    path('viewrogprofile/<str:myemail>',views.viewrogprofile,name="viewrogprofile"),
 ]
 if settings.DEBUG:
     urlpatterns =urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

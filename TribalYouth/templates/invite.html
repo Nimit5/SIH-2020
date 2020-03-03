@@ -1,9 +1,10 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Apply</title>
+    <title>{% trans "Apply" %}</title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/apply.css' %}">
     <!-- FOnt Awe some Icon -->
@@ -30,7 +31,7 @@
     <nav id="navb" class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="font-family: cursive;">AAKRATI</a>
+            <a class="navbar-brand" href="#" style="font-family: cursive;">{% trans "AAKRATI" %}</a>
           </div>
           <form class="navbar-form navbar-left" action="/action_page.py">
             <div class="input-group">
@@ -43,18 +44,18 @@
             </div>
           </form>
           <ul class="nav navbar-nav" style="float: right;">
-            <li class="active"><a href="/"><i class="fa fa-bars"></i> Home</a></li>           
-            <li><a href="MyProfile.html"><i class="fa fa-edit"></i>  profile</a></li>
-            <li><a href="aboutus.html"><i class="fa fa-globe"></i> About us</a></li>
+            <li class="active"><a href="/"><i class="fa fa-bars"></i> {% trans "Home" %}</a></li>           
+        
+            
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>  contact
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>{% trans "Contact" %}
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">by message</a></li>
-                  <li><a href="#">by  call</a></li>
+                  <li><a href="/contactorg">{% trans "By message" %}</a></li>
+                  <li><a href="/contactorg">{% trans "By call" %}</a></li>
                 </ul>
             </li>
-            <li><button class="btn btn-danger navbar-btn">Sign out</button></li> 
+            <li><button class="btn btn-danger navbar-btn">{% trans "Sign Out" %}</button></li> 
           </ul>
         </div>
     </nav> 
@@ -70,7 +71,7 @@
 
                 <form action="table.html" method="POST">
                     <fieldset>
-                        <legend style="font-family:cursive"><mark>Your Details:</mark></legend>
+                        <legend style="font-family:cursive"><mark>{% trans "Your Details" %}:</mark></legend>
                         <div style="margin-left: 40%;">
                             <img src="{% static 'images/africantribe.jpg' %}" alt="not found">
                         </div><br><br><br><br><br><br><br>
@@ -79,32 +80,32 @@
 
                         <table style="margin-left: 20%; font-size: 120%;">
                           <tr>
-                            <td><b style="font-family:cursive;">Name: </b></td>
+                            <td><b style="font-family:cursive;">{% trans "Name" %}: </b></td>
                             <td><input type="text" value="{{usertribal.first_name}}"><br></td>
                           </tr>
                           <tr>
-                            <td><b style="font-family:cursive;">Phone: </b></td>
-                            <td><input type="text" value="93745969674"><br></td>
+                            <td><b style="font-family:cursive;">{% trans "Phone" %}: </b></td>
+                            <td><input type="text" value="{{u.mobile}}"><br></td>
                           </tr>
                           <tr>
-                            <td> <b style="font-family:cursive;">Email: </b></td>
+                            <td> <b style="font-family:cursive;">{% trans "Email" %}: </b></td>
                             <td><input type="text" value="{{usertribal.email}}"><br></td>
                           </tr>
                           <tr>
-                            <td><b style="font-family:cursive;">City/Village: </b></td>
-                            <td><input type="text" value="Burhanpur"><br></td>
+                            <td><b style="font-family:cursive;">{% trans "City/Village" %}: </b></td>
+                            <td><input type="text" value="{{u.city}}"><br></td>
                           </tr>
                           <tr>
-                            <td><b style="font-family:cursive;">Category: </b></td>
-                            <td><input type="text" value="{{usertribal.category}}"><br></td>
+                            <td><b style="font-family:cursive;">{% trans "Category" %}: </b></td>
+                            <td><input type="text" value="{{u.category}}"><br></td>
                           </tr>
                           <tr>
-                            <td><b style="font-family:cursive;">Skills: </b></td>
+                            <td><b style="font-family:cursive;">{% trans "Skills" %}: </b></td>
                             
                             <td><ul>
 
                               {% for i in skill %}
-                              <li>{{i}}</li>
+                              <li style=" color:black;"><a href="/show_skill/{{i.id}}">{{i.title}}</a></li>
                               {% endfor %}
                           
                             </ul><br></td>
@@ -123,7 +124,7 @@
                 <p style="color: white;"><img src="{% static 'images/org1.jpg' %}" alt="Pineapple" >
                   {{userorg.desc}}
                   </p><br><br>
-                  <p><b style="font-family:cursive; font-size: large; "><mark>Application:</mark></b></p>
+                  <p><b style="font-family:cursive; font-size: large; "><mark>{% trans "Application" %}:</mark></b></p>
                   
                   <form action="/makeinvitation" method="POST">
                     {% csrf_token %}

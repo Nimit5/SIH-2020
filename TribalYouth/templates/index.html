@@ -4,7 +4,7 @@
 
 <head>
     <title>
-        Home Page
+      {% trans "Home Page" %}
     </title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'css/register.css' %}" rel="stylesheet" type="text/css">
@@ -44,7 +44,7 @@
                 </option>
             {% endfor %}
         </select>
-        <input type="submit" value="Go"/>
+        <input type="submit" value="Go" style="width: 8%;" />
     </form>
 
       <div class="logo" style="float:left;"> 
@@ -52,29 +52,29 @@
       </div>
       
       <div class="dropdown" style="float:right;">
-        <button class="dropbtn"><i class="fa fa-phone" style="font-size: xx-large;"></i>{% trans "Contact" %}  <i class="fa fa-angle-double-down" ></i></button>
+        <button class="dropbtn"><i class="fa fa-phone" style="font-size: xx-large;"></i> {% trans "Contact" %}<i class="fa fa-angle-double-down" ></i></button>
         <div class="dropdown-content">
-          <a href="contactorg"><button>by message</button></a>
-         <a href="contactorg"><button>by call</button></a>
+          <a href="contactorg"><button>{% trans "by message" %}</button></a>
+         <a href="contactorg"><button>{% trans "by call" %}</button></a>
         </div>
       </div>
       
       <div class="dropdown" style="float:right;">
-        <form action="aboutus.html">
-            <button class="dropbtn"><i class="fa fa-question" style="font-size: xx-large;"></i> About us</button>
+        <form action="contactorg">
+            <button class="dropbtn"><i class="fa fa-question" style="font-size: xx-large;"></i> {% trans "About us" %}</button>
         </form>
       </div>
 
       <div class="dropdown" style="float:right;">
-            <button class="dropbtn" id="navbtn"><i class="fa fa-address-book" style="font-size: xx-large;"></i> Register</button>
+            <button class="dropbtn" id="navbtn"><i class="fa fa-address-book" style="font-size: xx-large;"></i> {% trans "Register" %}</button>
       </div>
       <div class="dropdown" style="float:right;">
-        <button class="dropbtn" id="navbtn"><i class="fa fa-shopping-cart" style="font-size: xx-large;"></i> Store</button>
+        <button class="dropbtn" id="navbtn"><i class="fa fa-shopping-cart" style="font-size: xx-large;"></i> {% trans "Store" %}</button>
      </div>
 
       <div class="dropdown" style="float:right;">
         <a href="">
-            <button class="dropbtn"><i class="fa fa-home" style="font-size: xx-large;"></i> Home</button>
+            <button class="dropbtn"><i class="fa fa-home" style="font-size: xx-large;"></i> {% trans "Home" %}</button>
         </a>
       </div>
 
@@ -86,7 +86,7 @@
         <li class="img1" id="{% static 'images/artwork.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.3)),url({% static 'images/artwork.jpg' %});">
             <div class="content">
               <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
-                <p>Our commitment is to always try to master the art of exemplary services & experience</p>
+                <p>{% trans "Our commitment is to always try to master the art of exemplary services & experience" %}</p>
                 <i class="fa fa-instagram" id="insta"></i>
                 <i class="fa fa-twitter" id="twit"></i>
                 <i class="fa fa-facebook" id="fb"></i>
@@ -94,7 +94,7 @@
                     
                 </p><br>
         
-                <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> Login Here</button>
+                <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> {% trans "Login Here" %}</button>
             </div>
             
         </li>
@@ -102,7 +102,7 @@
         <li class="img2" id="{% static 'images/dhokraart.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),url({% static 'images/dhokraart.jpg' %});">
             <div class="content">
               <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
-                <p>Our commitment is to always try to master the art of exemplary services & experience</p>
+                <p>{% trans "Our commitment is to always try to master the art of exemplary services & experience" %}</p>
                 <i class="fa fa-instagram" id="insta"></i>
                 <i class="fa fa-twitter" id="twit"></i>
                 <i class="fa fa-facebook" id="fb"></i>
@@ -110,14 +110,14 @@
                     
                 </p><br>
         
-                <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> Login Here</button>
+                <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> {% trans "Login Here" %}</button>
             </div>
         </li>
 
         <li class="img3" id="{% static 'images/bottleshandloom.jpg' %}" style="background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.8)),url({% static 'images/bootleshandloom.png' %});">
           <div class="content">
             <h2><b><span id="1" style="color:darkorange;">TRIBAL</span> INDIA </b><span style="color: green;">PLATFORM</span></h2>
-              <p>Our commitment is to always try to master the art of exemplary services & experience</p>
+              <p>{% trans "Our commitment is to always try to master the art of exemplary services & experience" %}</p>
               <i class="fa fa-instagram" id="insta"></i>
               <i class="fa fa-twitter" id="twit"></i>
               <i class="fa fa-facebook" id="fb"></i>
@@ -125,7 +125,7 @@
                   
               </p><br>
       
-              <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> Login Here</button>
+              <button class="btn btn-half" id="myBtn" style="width: 40%;"><i class="fa fa-arrow-right" style="font-size: xx-large;"></i> {% trans "Login Here" %}</button>
           </div>
       </li>
             
@@ -145,8 +145,8 @@
             
             <div class="tab1">
               <span class="close" style="color: black; font-size: xx-large; color: red;"><i class="fa fa-times"></i></span>
-              <button class="tablinks" id="loginBtn" onclick="openCity(event, 'login')">Login</button>
-              <button class="tablinks" id="signUpBtn" onclick="openCity(event, 'signup')">SignUp</button>
+              <button class="tablinks" id="loginBtn" onclick="openCity(event, 'login')">{% trans "Login" %}</button>
+              <button class="tablinks" id="signUpBtn" onclick="openCity(event, 'signup')">{% trans "SignUp" %}</button>
               <hr style="border-color:black; width:100%;">
             </div>
 
@@ -154,15 +154,15 @@
             <div id="login" class="tabcontent">
 
               <fieldset>
-                <legend><h3>Login</h3></legend>
-                <form action="login" method="POST">
+                <legend><h3>{% trans "Login" %}</h3></legend>
+                <form action="/login" method="POST">
                   {% csrf_token %}
-                Email :<input type="text" name="Mobile num."  placeholder="Enter Email" required="true"  ><br><br>
-                Password :<input type="password" name="passwordinput."  placeholder="Enter Password" required="true"  ><br><br>
+                {% trans "Email" %} :<input type="text" name="Mobile num."  placeholder="Enter Email" required="true"  ><br><br>
+                {% trans "Password" %} :<input type="password" name="passwordinput."  placeholder="Enter Password" required="true"  ><br><br>
                 <br><br>
 
                 {% if n %}
-                <p>Login Failed!!! ,invalid username password</p>
+                <p>{% trans "Login Failed!!! ,invalid username password" %}</p>
                 {% endif %}
                 <input type="submit" value="Login" style="width: 40%;">
               <br>
@@ -182,14 +182,14 @@
                 </td>
                 </tr>
                 <tr>
-                  <td>Tribal Youth</td>
-                  <td>Professional</td>
+                  <td>{% trans "Tribal Youth" %}</td>
+                  <td>{% trans "Professional" %}</td>
                 </tr>
               </table>
 
               <div id="tribalsignup" class="innertab" >
                 <fieldset>
-                  <legend><h3>Register</h3></legend>
+                  <legend><h3>{% trans "Register" %}</h3></legend>
                   <form action="/" method="POST">
                     {% csrf_token %}
                     <div style="color:red; font-weight: bold;">
@@ -198,12 +198,12 @@
                       {% endfor %}
                     </div>
                     
-                  Name : <input type="text" name="name"  placeholder="Enter your name"><br>
-                  Mobile :<input type="text" name="mobile" placeholder="Enter you Mobile number" required="true" pattern="([+]?\d{1,2})?([0-9]{10})"><br>
-                  Email : <input type="text" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
-                  Password : <input type="password" name="password" placeholder="Password" ><br>
-                  Confirm Password : <input type="password" name="confpassword" placeholder="Re-enter Password" ><br>
-                  Category : <input type="radio" name="category" value="sc">SC
+                  {% trans "Name" %} : <input type="text" name="name"  placeholder="Enter your name"><br>
+                  {% trans "Mobile" %} :<input type="text" name="mobile" placeholder="Enter you Mobile number" required="true" pattern="([+]?\d{1,2})?([0-9]{10})"><br>
+                  {% trans "Email" %} : <input type="text" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+                  {% trans "Password" %} : <input type="password" name="password" placeholder="Password" ><br>
+                  {% trans "Confirm Password" %} : <input type="password" name="confpassword" placeholder="Re-enter Password" ><br>
+                  {% trans "Category" %} : <input type="radio" name="category" value="sc">SC
                   <input type="radio" name="category" value="st">ST<br><br>
                   <input type="submit" value="Sign up" style="width: 40%;" />
 
@@ -216,12 +216,12 @@
                   <legend><h3>Register</h3></legend>
                   <form action="register_org" method="POST">
                     {% csrf_token %}
-                  Name : <input type="text" name="name"  placeholder="Enter your name"><br>
-                  Mobile :<input type="text" name="mobile" placeholder="Enter you Mobile number" required="true" pattern="([+]?\d{1,2})?([0-9]{10})"><br>
-                  Email : <input type="text" name="email" placeholder="Enter your Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
-                  Password : <input type="password" name="password" placeholder="Password" ><br>
-                  Confirm Password : <input type="password" name="confpassword" placeholder="Re-enter Password" ><br>
-                  Organization : <input type="text" name="orgname"  placeholder="Name of Organization"><br>
+                  {% trans "Name" %} : <input type="text" name="name"  placeholder="Enter your name"><br>
+                  {% trans "Mobile" %} :<input type="text" name="mobile" placeholder="Enter you Mobile number" required="true" pattern="([+]?\d{1,2})?([0-9]{10})"><br>
+                  {% trans "Email" %} : <input type="text" name="email" placeholder="Enter your Email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br>
+                  {% trans "Password" %} : <input type="password" name="password" placeholder="Password" ><br>
+                  {% trans "Confirm Password" %} : <input type="password" name="confpassword" placeholder="Re-enter Password" ><br>
+                  {% trans "Organization" %} : <input type="text" name="orgname"  placeholder="Name of Organization"><br>
                   <input type="submit" value="Sign up"/>
                   </form>
                 </fieldset>

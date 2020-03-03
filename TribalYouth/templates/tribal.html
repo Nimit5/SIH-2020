@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>  Tribal Page</title> 
+        <title>  {% trans "Tribal Page" %}</title> 
         <link href="{% static 'css/tribal.css' %}" rel="stylesheet" type="text/css">
         <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
 
@@ -34,7 +34,7 @@
           <nav id="navb" class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a class="navbar-brand" href="#" style="font-family: cursive;">AAKRATI</a>
+                <a class="navbar-brand" href="#" style="font-family: cursive;">{% trans "AAKRATI" %}</a>
               </div>
               <form class="navbar-form navbar-left" action="/action_page.py">
                 <div class="input-group">
@@ -47,23 +47,22 @@
                 </div>
               </form>
               <ul class="nav navbar-nav" style="float: right;">
-                <li class="active"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                <li class="active"><a href="/"><i class="fa fa-home"></i> {% trans "Home" %}</a></li>
                 
-                <li><a href="/viewskill"><i class="fa fa-ravelry"  ></i>My skills</a></li>
-                <li><a href="#organisation"><i class="fa fa-ravelry"  ></i> Organisation</a></li>
-                <li><a href="/myrequests"><i class="fa fa-ravelry"></i> My Requests</a></li>
+                <li><a href="/viewskill"><i class="fa fa-ravelry"></i>{% trans "My skills" %}</a></li>
+                <li><a href="#organisation"><i class="fa fa-ravelry"></i>{% trans "Organisation" %}</a></li>
+                <li><a href="/myrequests"><i class="fa fa-ravelry"></i> {% trans "My Requests" %}</a></li>
                 <li><a href="/invitations"><i class="fa fa-ravelry"></i>{% trans "Invitations" %}</a></li>
-                <li><a href="/show_profile"><i class="fa fa-edit"></i> Profile</a></li>
-                <li><a href="/scheme"><i class="fa fa-globe"></i> Schemes</a></li>
+                <li><a href="/show_profile"><i class="fa fa-edit"></i> {% trans "Profile" %}</a></li>
+                <li><a href="/scheme"><i class="fa fa-globe"></i> {% trans "Schemes" %}</a></li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>  contact
-                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-phone"></i>{% trans "contact" %}</a>
                     <ul class="dropdown-menu">
-                      <li><a href="contactorg">by message</a></li>
-                      <li><a href="contactorg">by  call</a></li>
+                      <li><a href="contactorg">{% trans "by message" %}</a></li>
+                      <li><a href="contactorg">{% trans "by  call" %}</a></li>
                     </ul>
                 </li>
-                <li><a href="/logout" class="btn btn-danger" style="color: white; padding: 5px;margin-top: 8px;"><i class="fa fa-sign-out"></i> LogOut</a></li>
+                <li><a href="/logout" class="btn btn-danger" style="color: white; padding: 5px;margin-top: 8px;"><i class="fa fa-sign-out"></i> {% trans "LogOut" %}</a></li>
              </ul>
             </div>
         </nav> 
@@ -86,9 +85,9 @@
             <div class="col-sm-12 text-center">
                 <div class="title">
                     
-                <h2><b>Organisation</b></h2>
+                <h2><b>{% trans "Organisation" %}</b></h2>
                  <div class="sub-heading">
-                     <p>Organisations who can provide you jobs and endorse your skills.</p>
+                     <p>{% trans "Organisations who can provide you jobs and endorse your skills" %}.</p>
                  </div>
                 </div>
             </div>
@@ -102,10 +101,10 @@
               <legend >{{i.org_name}}</legend>
               
             <p><img src="{% static 'images/org1.jpg' %}" alt="Pineapple" >
-              <b>Email</b> - {{i.email}}<br><br>  
+              <b>{% trans "Email" %}</b> - {{i.email}}<br><br>  
               {{i.desc}}<br>              
             </p>
-            <button class="btn btn-primary">View More</button>
+            <a href="/viewrogprofile/{{i.email}}"><button class="btn btn-primary">{% trans "View More" %}</button></a>
             <form action="apply/{{i.id}}" method="POST">
               {% csrf_token %}
               <input type="submit" class="btn btn-warning" value="Apply">
@@ -141,7 +140,7 @@
                     </div>
                     <div class="sub-heading"><br>
                         <p1>
-                           Give us an opportunity to serve you once,<br> we are sure you'll love to come back to us again and be our esteemed customer forever.<br><br>
+                          {% trans "Give us an opportunity to serve you once" %},<br> {% trans "we are sure you'll love to come back to us again and be our esteemed customer forever" %}.<br><br>
                         </p1>
                         <div class="sub-heading"></div>
                     </div>
@@ -151,7 +150,7 @@
          </div> 
 
          <div class="last text-center">
-             &copy;<b>Tribals Platform AAKRATI-2020, RESERVED</b>
+             &copy;<b>{% trans "Tribals Platform AAKRATI-2020, RESERVED" %}</b>
          </div>
                      
     </footer>

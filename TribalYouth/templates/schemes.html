@@ -1,17 +1,135 @@
-
-
+{% load static %}
+{% load i18n %}
 {% load index %}
+<!DOCTYPE html>
 <html>
-    <body>
+    <head>
+        <title>{% trans "Schemes" %}</title>
+
+        <link href="{% static 'css/tribal.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+
+        <!-- FOnt Awesome Icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
+    
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <!--<script type="text/javascript" src="./lib/jquery-3.4.1.min.js"></script>-->
+        <script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="{% static 'js/caroufredsel.js' %}"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body class="container-fluid">
+
+        <!-- navigation is here started -->
+        
+       <nav id="navb" class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="font-family: cursive;">{% trans "AAKRATI" %}</a>
+          </div>
+          <form class="navbar-form navbar-left" action="/action_page.py">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+          <ul class="nav navbar-nav" style="float: right;">
+            <li class="active"><a href="/"><i class="fa fa-home" style="font-size: x-large;"></i>{% trans "Home" %} </a></li>
+            <li><button class="btn btn-danger navbar-btn" onclick="window.history.back()">{% trans "Back" %}</button></li> 
+          </ul>
+        </div>
+       </nav> 
+   
+       <!-- navigation is here closed -->  
+       
+       <!-- MIDDLE HEADING SECTION START -->
+
+       <div id="organisation">
+
+        <div class="row" style="margin-top: -510px;">
+          <div class="col-sm-12 text-center" style="margin-bottom: 5%;">
+              <div class="title">
+                  
+              <h2><b>{% trans "Schemes" %}</b> - {% trans "Explore and get Benefited" %}</h2>
+               <div class="sub-heading">
+                   <p style="font-weight: bold; font-size: 110%; font-family: cursive;">{% trans "Schemes launched by Ministry of Tribal Affairs for the welfare of Scheduled Tribes" %}</p>
+               </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- MIDDLE HEADING SECTION START -->
+
+        <!-- SCHEME AREA START -->
+
         {% for i in sizer %}
-        <ul><li><h3>{{scheme_heading|index:i}}</h3></li></ul>
-        <ul> 
-        {% for j in lister_size_ranger|index:i %}
-        <li>
-        <a href="{{link_url|index:i|index:j}}">{{link_name|index:i|index:j}}</a>
-        </li>
+        <div class="schemes" style="border:solid 1px blue; margin-top:2%; background-color: beige; border-radius: 5px;">
+            
+          <h2 style="color: chocolate; font-family: cursive; font-weight: bold;">{{scheme_heading|index:i}} </h2><br>
+          
+
+          <ul style="list-style-type: circle; color: brown;">
+             {% for x in lister_size_ranger|index:i %}
+            <li><a href="{{link_url|index:i|index:x}}" style="color:blue; font-family:cursive; font-size:120%; margin-left:2%;">{{link_name|index:i|index:x}}</a></li>
+             {% endfor %}       
+          </ul>
+        
+          </div>
+
         {% endfor %}
-        </ul>
-        {% endfor %}
+
+        <!-- SCHEME AREA ENDS -->
+       </div>
+        <!-- navigation bar starts -->
+
+        <div class="f">
+
+          <footer id="footer">
+              <div class="container">
+                  <div class="row">
+                     <div class="animation" data-animation="slideInLeft"> 
+                      <div class="col-sm-12 text-center">
+                          <div class="social-icon">
+                             <a href=""><i class="fa fa-instagram" id="insta"></i></a>
+                              <a href=""><i class="fa fa-facebook" id="fb"></i></a>
+                              <a href=""><i class="fa fa-twitter" id="t"></i></a>                    
+                          </div>
+
+                          <p style="font-weight: bold;">{% trans "For refrence" %} : <a href="https://tribal.nic.in/Schemes.aspx">{% trans "Click Here" %}</a></p>
+
+                          <div class="sub-heading">
+                              <p1>
+                                {% trans "Give us an opportunity to serve you once" %} ,<br> {% trans "we are sure you'll love to come back to us again and be our esteemed customer forever" %}.<br><br>
+                              </p1>
+                             <br>
+                          </div>
+                          <br>
+                      </div>
+                  </div>
+              </div>   
+               </div> 
+      
+               <div class="last text-center">
+                   &copy;<b>{% trans "Tribals Platform AAKRATI-2020, RESERVED" %}</b>
+               </div>
+                           
+          </footer>
+      
+          </div>
+
+        <!-- navigation bar closed -->
+
     </body>
+
 </html>
